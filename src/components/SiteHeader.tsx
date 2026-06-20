@@ -18,7 +18,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo.url} alt="IGOV.IA" className="h-9 w-auto" />
+          <img src={logo.url} alt="IGOV.IA" className="h-12 w-auto" />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
