@@ -44,16 +44,14 @@ function Index() {
         />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            Instituto de Governança em IA
+            IGOVIA — Instituto de Governança em Inteligência Artificial
           </p>
           <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
-            Inteligência Artificial com{" "}
-            <span className="text-primary">estratégia, governança</span> e aplicação prática.
+            Sua Jornada Segura na Era da Inteligência Artificial.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             Apoiamos organizações públicas e privadas na adoção, estruturação e evolução da
-            Inteligência Artificial — com governança, análise estratégica, gestão de projetos
-            e desenvolvimento de agentes inteligentes.
+            Inteligência Artificial — com estratégia, governança e aplicação prática.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
