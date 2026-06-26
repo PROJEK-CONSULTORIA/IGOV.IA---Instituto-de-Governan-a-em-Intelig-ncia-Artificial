@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Compass, Shield, BarChart3, Cog, Bot, Sparkles, BookOpen, Users, Calendar, Gauge } from "lucide-react";
+import { ArrowRight, Compass, Shield, BarChart3, Cog, Bot, Sparkles, BookOpen, Calendar, Gauge } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/")({
