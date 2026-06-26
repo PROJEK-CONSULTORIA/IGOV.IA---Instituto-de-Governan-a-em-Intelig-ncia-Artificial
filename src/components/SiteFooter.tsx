@@ -31,7 +31,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} IGOV.IA — Instituto de Governança em Inteligência Artificial.</p>
+          <p>© {new Date().getFullYear()} IGOV.IA — INSTITUTO DE GOVERNANÇA EM INTELIGÊNCIA ARTIFICIAL.</p>
           <p>Governança · Ética · Inovação</p>
         </div>
       </div>
