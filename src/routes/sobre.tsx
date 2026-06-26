@@ -33,7 +33,7 @@ function SobrePage() {
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            O <strong className="text-foreground">IGOV.IA — Instituto de Governança em Inteligência Artificial</strong> tem
+            O <strong className="text-foreground">IGOV.IA — INSTITUTO DE GOVERNANÇA EM INTELIGÊNCIA ARTIFICIAL</strong> tem
             como propósito promover a adoção ética, segura, responsável e estratégica da Inteligência
             Artificial nas organizações públicas e privadas, contribuindo para que a tecnologia seja
             utilizada como instrumento de desenvolvimento humano, inovação, eficiência e geração de
