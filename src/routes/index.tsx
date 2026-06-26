@@ -44,7 +44,7 @@ function Index() {
         />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            IGOVIA — Instituto de Governança em Inteligência Artificial
+            IGOV.IA — INSTITUTO DE GOVERNANÇA EM INTELIGÊNCIA ARTIFICIAL
           </p>
           <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
             Sua Jornada Segura na Era da Inteligência Artificial.
