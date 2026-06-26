@@ -14,15 +14,13 @@ export const Route = createFileRoute("/sobre")({
 });
 
 function SobrePage() {
-  const principios = [
-    { t: "Evolução progressiva e mensurável", d: "A maturidade em IA evolui por estágios definidos, com métricas e evidências objetivas." },
-    { t: "Governança orientada a riscos", d: "Identificação, avaliação e mitigação contínua de riscos jurídicos, técnicos, éticos e operacionais." },
-    { t: "Centralidade na segurança jurídica", d: "Respeito ao devido processo legal e proteção de direitos fundamentais." },
-    { t: "Transparência algorítmica", d: "Sistemas documentados, auditáveis, rastreáveis e supervisionáveis." },
-    { t: "Conformidade regulatória", d: "Alinhamento à LGPD, normativas setoriais e boas práticas nacionais e internacionais." },
-    { t: "Sustentabilidade institucional", d: "Viabilidade financeira, robustez técnica e continuidade organizacional." },
-    { t: "Aprendizado contínuo", d: "Capacitação permanente e atualização tecnológica." },
-    { t: "Adaptação ao contexto", d: "Flexibilidade metodológica conforme maturidade e realidade institucional." },
+  const valores = [
+    { t: "Transparência", d: "Acreditamos que a transparência é a base da confiança e da governança eficaz da Inteligência Artificial." },
+    { t: "Ética", d: "A ética deve orientar todas as decisões no desenvolvimento e na aplicação de sistemas de IA." },
+    { t: "Inclusão", d: "A governança de IA deve considerar e proteger os interesses de todos os segmentos da sociedade." },
+    { t: "Rigor Técnico", d: "Nossas análises e recomendações são fundamentadas em evidências científicas e melhores práticas." },
+    { t: "Independência", d: "Mantemos independência institucional para garantir imparcialidade em avaliações e posicionamentos." },
+    { t: "Responsabilidade", d: "Atuamos com responsabilidade social, ambiental e institucional em todas as nossas iniciativas." },
   ];
   return (
     <PageShell>
@@ -62,7 +60,26 @@ function SobrePage() {
           </p>
         </div>
 
-        <div className="mt-16 rounded-3xl border border-primary/30 bg-primary/5 p-10">
+        <div className="mt-16 grid gap-5 md:grid-cols-2">
+          <div className="rounded-3xl border border-primary/30 bg-primary/5 p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa missão</p>
+            <p className="mt-4 text-lg font-semibold text-foreground">
+              Promover a governança responsável da Inteligência Artificial por meio de pesquisa,
+              educação, metodologias e advocacy, contribuindo para que a IA seja desenvolvida e
+              utilizada de forma ética, transparente e benéfica para toda a sociedade.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-border bg-card/60 p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa visão</p>
+            <p className="mt-4 text-lg font-semibold text-foreground">
+              Ser referência em governança da Inteligência Artificial no Brasil e na América Latina,
+              reconhecida pela qualidade de seus padrões, relevância no debate regulatório e
+              excelência de seus programas educacionais.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-primary/30 bg-primary/5 p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa razão de existir</p>
           <p className="mt-4 text-2xl font-semibold text-foreground sm:text-3xl">
             Construir um futuro em que a Inteligência Artificial seja governada com responsabilidade,
@@ -75,13 +92,13 @@ function SobrePage() {
       <section className="border-t border-border/60 bg-card/30">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Princípios</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossos valores</p>
             <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
-              O que fundamenta a atuação do IGOV.IA.
+              Os princípios que orientam todas as nossas ações e decisões.
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            {principios.map((p, i) => (
+            {valores.map((p, i) => (
               <div key={p.t} className="rounded-2xl border border-border bg-background p-6">
                 <div className="flex items-baseline gap-3">
                   <span className="text-sm font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
@@ -91,6 +108,31 @@ function SobrePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Por que o IGOV.IA existe</p>
+        <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+          Uma resposta brasileira aos desafios da governança em IA.
+        </h2>
+        <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            A Inteligência Artificial está transformando rapidamente todos os setores da sociedade.
+            No Brasil, essa transformação ocorre em um contexto de desigualdade social, diversidade
+            cultural e desafios regulatórios únicos, que exigem abordagens específicas de governança.
+          </p>
+          <p>
+            Enquanto países da Europa e da América do Norte avançam na criação de marcos
+            regulatórios e padrões de governança, o ecossistema brasileiro ainda demanda instituições
+            especializadas capazes de orientar governos, empresas e a sociedade civil sobre as
+            melhores práticas no desenvolvimento e uso de sistemas de IA.
+          </p>
+          <p>
+            O IGOV.IA foi criado para ajudar a preencher essa lacuna — construindo pontes entre
+            diferentes setores, promovendo diálogo, educação e a adoção de padrões que assegurem
+            que a IA sirva ao interesse público.
+          </p>
         </div>
       </section>
     </PageShell>

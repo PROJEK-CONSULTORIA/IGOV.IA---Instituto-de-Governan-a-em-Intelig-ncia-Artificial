@@ -15,6 +15,15 @@ export const Route = createFileRoute("/publicacoes")({
 });
 
 const publicacoes = [
+  {
+    categoria: "Artigo",
+    titulo: "Quem está liderando a corrida global da IA?",
+    resumo:
+      "Análise de Fábio Martins sobre o cenário competitivo internacional da Inteligência Artificial e os países que vêm definindo o ritmo da inovação, regulação e investimento em IA.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/quem-est%C3%A1-liderando-corrida-global-da-ia-f%C3%A1bio-martins-uzk8e/",
+    autor: "Fábio Martins",
+  },
   { categoria: "Governança", titulo: "As 10 Dimensões da Governança em IA", resumo: "Visão geral do framework do IGOV.IA para avaliar a maturidade institucional na adoção de Inteligência Artificial.", data: "Em breve" },
   { categoria: "Ética & Compliance", titulo: "Conformidade regulatória em IA: LGPD e além", resumo: "Como alinhar projetos de IA à LGPD, normativas setoriais e boas práticas internacionais.", data: "Em breve" },
   { categoria: "Casos Práticos", titulo: "Diagnóstico de maturidade no setor público", resumo: "Aprendizados de aplicação do framework em órgãos públicos brasileiros.", data: "Em breve" },
@@ -42,8 +51,22 @@ function PublicacoesPage() {
                 <span className="text-xs text-muted-foreground">{p.data}</span>
               </div>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{p.titulo}</h3>
+              {"autor" in p && p.autor && (
+                <p className="mt-1 text-xs text-muted-foreground">Por {p.autor}</p>
+              )}
               <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.resumo}</p>
-              <span className="mt-6 text-sm font-semibold text-primary">Em breve →</span>
+              {"url" in p && p.url ? (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 text-sm font-semibold text-primary hover:underline"
+                >
+                  Ler publicação →
+                </a>
+              ) : (
+                <span className="mt-6 text-sm font-semibold text-primary">Em breve →</span>
+              )}
             </article>
           ))}
         </div>

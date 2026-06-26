@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Compass, Shield, BarChart3, Cog, Bot, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Shield, BarChart3, Cog, Bot, Sparkles, BookOpen, Calendar, Gauge } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/")({
@@ -119,6 +119,36 @@ function Index() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Explore o IGOV.IA</p>
+          <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+            Conteúdo, metodologia e comunidade em um só lugar.
+          </h2>
+        </div>
+        <div className="mb-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: Compass, t: "Sobre o Instituto", d: "Missão, visão, valores e razão de existir do IGOV.IA.", to: "/sobre" },
+            { icon: BookOpen, t: "Publicações", d: "Artigos, pesquisas e análises sobre governança em IA.", to: "/publicacoes" },
+            { icon: Calendar, t: "Eventos", d: "Encontros, workshops e debates sobre IA responsável.", to: "/eventos" },
+            { icon: Gauge, t: "Índice de Governança", d: "Framework de 10 dimensões para avaliar maturidade em IA.", to: "/indice-governanca-ia" },
+          ].map(({ icon: Icon, t, d, to }) => (
+            <Link
+              key={t}
+              to={to}
+              className="group flex h-full flex-col rounded-2xl border border-border bg-card/60 p-6 transition-colors hover:border-primary/50 hover:bg-card"
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 text-lg font-semibold text-foreground">{t}</h3>
+              <p className="mt-2 flex-1 text-sm text-muted-foreground">{d}</p>
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                Saiba mais <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          ))}
+        </div>
+
         <div className="overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-card via-card to-primary/10 p-10 sm:p-14">
           <h2 className="max-w-3xl text-3xl font-bold text-foreground sm:text-4xl">
             Construir um futuro em que a IA seja governada com responsabilidade.
