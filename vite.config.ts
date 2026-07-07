@@ -10,32 +10,14 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // Inside the Lovable sandbox the Cloudflare preset is pinned and the preview
 // server used by prerender cannot resolve the bundled server entry, so we
 // disable both there.
-const isExternalBuild = !!process.env.VERCEL || process.env.STATIC_BUILD === "1";
-
-const staticRoutes = [
-  "/",
-  "/sobre",
-  "/o-que-fazemos",
-  "/publicacoes",
-  "/indice-governanca-ia",
-  "/eventos",
-  "/contato",
-];
+const isVercel = !!process.env.VERCEL;
 
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     server: { entry: "server" },
-    ...(isExternalBuild
-      ? {
-          prerender: {
-            enabled: true,
-            crawlLinks: true,
-            routes: staticRoutes,
-          },
-          pages: staticRoutes.map((path) => ({ path, prerender: { enabled: true } })),
-        }
-      : {}),
   },
-  ...(isExternalBuild ? { nitro: { preset: "static" } } : {}),
+  // On Vercel, build with the Vercel Nitro preset (serverless). In the
+  // Lovable sandbox, the Cloudflare preset from the base config stays active.
+  ...(isVercel ? { nitro: { preset: "vercel" } } : {}),
 });
