@@ -78,13 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "IGOV.IA — Instituto de Governança em Inteligência Artificial" },
-      { name: "description", content: "Promovemos a adoção ética, segura e estratégica da Inteligência Artificial em organizações públicas e privadas." },
+      { title: "IGOV.IA — Governança em Inteligência Artificial" },
+      { name: "description", content: "Instituto que apoia organizações na adoção ética, segura e estratégica da Inteligência Artificial." },
       { name: "author", content: "IGOV.IA" },
-      { property: "og:title", content: "IGOV.IA — Instituto de Governança em Inteligência Artificial" },
-      { property: "og:description", content: "Governança, diagnóstico, capacitação e implementação de IA com responsabilidade." },
+      { property: "og:title", content: "IGOV.IA — Governança em Inteligência Artificial" },
+      { property: "og:description", content: "Instituto que apoia organizações na adoção ética, segura e estratégica da Inteligência Artificial." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "IGOV.IA — Governança em Inteligência Artificial" },
+      { name: "twitter:description", content: "Instituto que apoia organizações na adoção ética, segura e estratégica da Inteligência Artificial." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d885c96-7bda-4aaf-a111-539393a1a336" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d885c96-7bda-4aaf-a111-539393a1a336" },
     ],
     links: [
       {
