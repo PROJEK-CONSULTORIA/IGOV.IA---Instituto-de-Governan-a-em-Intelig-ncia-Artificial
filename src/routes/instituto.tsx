@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 
-export const Route = createFileRoute("/sobre")({
+export const Route = createFileRoute("/instituto")({
   head: () => ({
     meta: [
       { title: "Sobre — IGOV.IA" },

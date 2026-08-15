@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Activity, Compass, LineChart, Layers, Bot, GraduationCap, ArrowRight } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 
-export const Route = createFileRoute("/o-que-fazemos")({
+export const Route = createFileRoute("/solucoes")({
   head: () => ({
     meta: [
       { title: "O que fazemos — IGOV.IA" },

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { FileText } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 
-export const Route = createFileRoute("/publicacoes")({
+export const Route = createFileRoute("/knowledge-hub")({
   head: () => ({
     meta: [
       { title: "Publicações — IGOV.IA" },

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, MapPin } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 
-export const Route = createFileRoute("/eventos")({
+export const Route = createFileRoute("/forum")({
   head: () => ({
     meta: [
       { title: "Eventos — IGOV.IA" },

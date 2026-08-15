@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Compass, Users, Server, Wallet, Database, UserCheck, ScaleIcon, Lock, Network, Activity, ArrowRight } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 
-export const Route = createFileRoute("/indice-governanca-ia")({
+export const Route = createFileRoute("/framework")({
   head: () => ({
     meta: [
       { title: "Índice de Governança em IA — IGOV.IA" },
