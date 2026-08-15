@@ -16,6 +16,7 @@ import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
 import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as ForumRouteImport } from './routes/forum'
 import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
@@ -55,6 +56,11 @@ const FrameworkRoute = FrameworkRouteImport.update({
   path: '/framework',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForumRoute = ForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventosRoute = EventosRouteImport.update({
   id: '/eventos',
   path: '/eventos',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/forum'
     | '/framework'
     | '/indice-governanca-ia'
     | '/knowledge-hub'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/forum'
     | '/framework'
     | '/indice-governanca-ia'
     | '/knowledge-hub'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/forum'
     | '/framework'
     | '/indice-governanca-ia'
     | '/knowledge-hub'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   EventosRoute: typeof EventosRoute
+  ForumRoute: typeof ForumRoute
   FrameworkRoute: typeof FrameworkRoute
   IndiceGovernancaIaRoute: typeof IndiceGovernancaIaRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FrameworkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forum': {
+      id: '/forum'
+      path: '/forum'
+      fullPath: '/forum'
+      preLoaderRoute: typeof ForumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/eventos': {
       id: '/eventos'
       path: '/eventos'
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   EventosRoute: EventosRoute,
+  ForumRoute: ForumRoute,
   FrameworkRoute: FrameworkRoute,
   IndiceGovernancaIaRoute: IndiceGovernancaIaRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
