@@ -1,94 +1,56 @@
-## Site Institucional IGOV.IA
+## IGOV.IA — Experiência premium, novo menu e nova Home
 
-Site multi-página em português, identidade visual baseada no logo enviado (preto + verde IGOV.IA), conteúdo institucional extraído de igovia.com.br adaptado para a estrutura solicitada.
+Mantém o tema escuro atual e a logomarca. Adiciona camada de movimento (motion, já instalado), novo menu e Home em seções de tela cheia.
 
-### Estrutura de rotas
+### Menu
 
+Itens: Home, Framework, Soluções, Knowledge Hub, AI Governance Forum, Instituto, Contato.
+À direita: botão verde "Solicitar Diagnóstico" (leva a /contato).
+Comportamento: transparente sobre o Hero, vira preto sólido (com blur e borda sutil) ao rolar. Mobile: menu em painel deslizante.
+
+Mapeamento de rotas (conteúdo existente é reaproveitado, sem perder páginas):
+
+```text
+Framework            -> /framework            (conteúdo atual de /indice-governanca-ia)
+Soluções             -> /solucoes             (conteúdo atual de /o-que-fazemos)
+Knowledge Hub        -> /knowledge-hub        (conteúdo atual de /publicacoes)
+AI Governance Forum  -> /forum                (conteúdo atual de /eventos)
+Instituto            -> /instituto            (conteúdo atual de /sobre)
+Contato              -> /contato
 ```
-/                          Home (hero + destaques + CTA)
-/sobre                     Sobre o Instituto
-/o-que-fazemos             Serviços / atuação
-/publicacoes               Publicações
-/eventos                   Eventos
-/indice-governanca-ia      Índice de Governança em IA
-/contato                   Contato
-```
 
-Header fixo com navegação para as 6 seções + logo. Footer com identidade, links rápidos e contato.
+As rotas antigas continuam existindo como redirecionamento para as novas, para não quebrar links.
 
-### Conteúdo por página
+### Home
 
-**Home (`/`)**
-- Hero: "Inteligência Artificial com estratégia, governança e aplicação prática"
-- Subhero institucional do IGOV.IA
-- Cards com pilares (Setor Público, Indústria, Comércio, Serviços)
-- CTA para "O que fazemos" e "Índice de Governança em IA"
+Seções de altura ~100vh, muito preto, respiro generoso:
 
-**Sobre (`/sobre`)** — usa o texto institucional fornecido pelo usuário:
-- Propósito do Instituto
-- Atuação como agente de transformação
-- Compromisso ético
-- Bloco "Nossa razão de existir" (visão)
-- Princípios (Evolução mensurável, Governança a riscos, Segurança jurídica, Transparência algorítmica, Conformidade regulatória, Sustentabilidade, Aprendizado contínuo, Adaptação ao contexto)
+1. Hero centralizado
+   - Título: "Governando o futuro da Inteligência Artificial."
+   - Subtítulo: "O IGOV.IA ajuda organizações públicas e privadas a implementar Inteligência Artificial com estratégia, confiança e responsabilidade."
+   - Botão principal verde: Solicitar Diagnóstico
+   - Botão secundário contornado: Conhecer o Framework
+   - Painel flutuante à direita (vidro fosco, borda verde sutil) com contadores animados no load: 100+ Questões, 10 Dimensões, 9 Níveis, ∞ Evolução. Em telas pequenas, o painel vira uma faixa horizontal abaixo dos botões.
+2. Pilares (estratégia, governança, maturidade, projetos, agentes, capacitação)
+3. Para quem é o IGOV.IA (setores)
+4. Framework em destaque (10 dimensões, atalho para /framework)
+5. Explore o IGOV.IA (atalhos para as seções)
+6. CTA final
 
-**O que fazemos (`/o-que-fazemos`)** — eixos de serviço extraídos do site:
-- Diagnóstico de maturidade em IA
-- Estruturação de estratégia e governança
-- Análise de mercado e inteligência estratégica
-- Gestão de projetos de IA (metodologia própria)
-- Desenvolvimento de agentes inteligentes
-- Capacitação e gestão de mudança
-- Cada serviço: ícone, título, descrição curta
+### Experiência e movimento
 
-Seção "Jornada de Evolução" com 8 etapas: Diagnosticar → Planejar → Estruturar → Capacitar → Implementar → Monitorar → Reavaliar → Evoluir.
-
-**Publicações (`/publicacoes`)**
-- Grid de cards de artigos/whitepapers (placeholders editáveis: título, resumo, data, categoria, link "Em breve")
-- Categorias: Governança, Ética & Compliance, Casos Práticos, Regulamentação
-- Banner para inscrição em newsletter (apenas visual nesta fase)
-
-**Eventos (`/eventos`)**
-- Lista de eventos próximos (cards placeholder: data, local, título, descrição)
-- Seção "Eventos anteriores" (placeholder)
-- CTA "Receber convites" leva para Contato
-
-**Índice de Governança em IA (`/indice-governanca-ia`)** — usa as 10 dimensões do site:
-1. Estratégia e Governança
-2. Cultura, Pessoas e Comunicação
-3. Estrutura Tecnológica
-4. Investimentos, Custos e Despesas
-5. Qualidade de Dados
-6. Impacto no Usuário Final
-7. Compliance, Riscos e Ética
-8. Segurança da Informação
-9. Fornecedores e Integrações
-10. Monitoramento e Melhoria Contínua
-
-Cada dimensão como card com ícone, descrição e nível de maturidade ilustrativo. Bloco explicativo da metodologia e CTA "Solicitar diagnóstico" → Contato.
-
-**Contato (`/contato`)**
-- Formulário (nome, organização, e-mail, assunto, mensagem) — nesta fase, apenas frontend com validação e toast de confirmação (sem backend). Posso plugar Lovable Cloud depois para armazenar mensagens, se desejar.
-- Bloco lateral com e-mail institucional, LinkedIn e localização (placeholders editáveis)
-
-### Design
-
-- **Paleta**: preto profundo (#0A0A0A), verde IGOV.IA (~#7AB838), branco, cinzas neutros
-- **Tipografia**: sans-serif geométrica forte para títulos (estilo do logo) + sans-serif neutra para corpo
-- **Estilo**: institucional moderno, tech-sério, espaçamento generoso, detalhes em verde, cards com bordas sutis, hover suave
-- Tokens semânticos em `src/styles.css` (sem cores hardcoded nos componentes)
-- SEO: title/description únicos por rota, Open Graph básico
+- Scroll suave nativo com respeito a `prefers-reduced-motion`
+- Fade/slide de entrada por seção (aparecem conforme o usuário desce, uma vez só)
+- Transição de fade entre páginas
+- Parallax leve (8-20px) em fundos e no painel do Hero
+- Hover sofisticado: elevação sutil, brilho verde na borda, deslocamento de seta, sublinhado animado nos links
+- Animações curtas (150-500ms), easing suave, sem exageros
+- Performance: apenas transform/opacity, IntersectionObserver, sem animação em listas longas
 
 ### Detalhes técnicos
 
-- TanStack Start file-based routing em `src/routes/`
-- Componentes compartilhados: `SiteHeader`, `SiteFooter`, `SectionHeader`, `Card`, `CTASection`
-- Logo enviado salvo como asset Lovable e usado no header/footer
-- Conteúdo em arquivos `.ts` de dados por página, fácil de editar depois
-- Formulário de contato sem backend nesta primeira versão
-
-### Fora do escopo (posso adicionar depois mediante pedido)
-
-- Backend para formulário (Lovable Cloud)
-- CMS para publicações/eventos
-- Versões em inglês/espanhol
-- Diagnóstico interativo de maturidade (questionário com pontuação)
+- Novos componentes: `Reveal.tsx` (scroll reveal), `Counter.tsx` (contador animado), `Parallax.tsx`, `HeroStatsPanel.tsx`
+- `SiteHeader.tsx` reescrito (estado de scroll, novos itens, botão verde)
+- `PageShell.tsx` ganha wrapper de transição de página
+- Conteúdo permanece dentro de cada arquivo de rota, como hoje
+- SEO: `head()` próprio com title/description/OG para cada nova rota
