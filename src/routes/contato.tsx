@@ -1,113 +1,87 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Linkedin, MapPin, Send } from "lucide-react";
-import { PageShell, PageHero } from "@/components/PageShell";
 import { toast } from "sonner";
+import { PageShell, PageHero } from "@/components/PageShell";
+import { Reveal } from "@/components/motion/Reveal";
+import { Mail, Linkedin, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — IGOV.IA" },
-      { name: "description", content: "Fale com o Instituto de Governança em Inteligência Artificial." },
-      { property: "og:title", content: "Contato — IGOV.IA" },
-      { property: "og:description", content: "Entre em contato com o IGOV.IA para projetos, parcerias ou diagnósticos." },
+      { title: "Contato | IGOV.IA" },
+      { name: "description", content: "Fale com o IGOV.IA e solicite o diagnóstico de maturidade em governança de Inteligência Artificial." },
+      { property: "og:title", content: "Contato | IGOV.IA" },
+      { property: "og:description", content: "Solicite o diagnóstico de maturidade em IA da sua organização." },
     ],
   }),
   component: ContatoPage,
 });
 
 function ContatoPage() {
-  const [enviando, setEnviando] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setEnviando(true);
-    await new Promise((r) => setTimeout(r, 600));
-    setEnviando(false);
-    (e.currentTarget as HTMLFormElement).reset();
-    toast.success("Mensagem registrada", {
-      description: "Em breve entraremos em contato.",
-    });
-  };
+    setSending(true);
+    setTimeout(() => {
+      setSending(false);
+      toast.success("Mensagem enviada. Entraremos em contato em breve.");
+      (e.target as HTMLFormElement).reset();
+    }, 600);
+  }
+
+  const field =
+    "w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary";
 
   return (
     <PageShell>
       <PageHero
         eyebrow="Contato"
-        title="Vamos conversar sobre governança em IA."
-        description="Conte-nos sobre o desafio da sua organização. Nossa equipe retorna em breve."
+        title="Vamos conversar sobre a sua jornada de IA."
+        description="Solicite um diagnóstico ou fale com nossa equipe sobre governança, capacitação e projetos de Inteligência Artificial."
       />
-
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <form onSubmit={handleSubmit} className="rounded-3xl border border-border bg-card/60 p-8 sm:p-10">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Nome" name="nome" required />
-              <Field label="Organização" name="organizacao" />
-              <Field label="E-mail" name="email" type="email" required />
-              <Field label="Assunto" name="assunto" required />
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="grid gap-16 lg:grid-cols-[1.4fr_1fr]">
+          <Reveal>
+            <form onSubmit={onSubmit} className="space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <input required name="nome" placeholder="Nome" className={field} />
+                <input required name="organizacao" placeholder="Organização" className={field} />
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                <input required type="email" name="email" placeholder="E-mail" className={field} />
+                <input name="telefone" placeholder="Telefone (opcional)" className={field} />
+              </div>
+              <input required name="assunto" placeholder="Assunto" className={field} />
+              <textarea required name="mensagem" rows={6} placeholder="Mensagem" className={field} />
+              <button
+                type="submit"
+                disabled={sending}
+                className="inline-flex rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] disabled:opacity-60"
+              >
+                {sending ? "Enviando..." : "Enviar mensagem"}
+              </button>
+            </form>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="space-y-8 rounded-2xl border border-border bg-card p-8">
+              {[
+                { icon: Mail, label: "E-mail", value: "contato@igovia.com.br" },
+                { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/company/igovia" },
+                { icon: MapPin, label: "Localização", value: "Brasil" },
+              ].map(({ icon: Icon, label, value }) => (
+                <div key={label} className="flex gap-4">
+                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</p>
+                    <p className="mt-1 text-sm text-foreground">{value}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <label className="mt-5 block">
-              <span className="text-sm font-medium text-foreground">Mensagem</span>
-              <textarea
-                name="mensagem"
-                required
-                rows={6}
-                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
-                placeholder="Descreva brevemente o contexto e o que precisa..."
-              />
-            </label>
-            <button
-              type="submit"
-              disabled={enviando}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
-            >
-              {enviando ? "Enviando..." : (<>Enviar mensagem <Send className="h-4 w-4" /></>)}
-            </button>
-          </form>
-
-          <aside className="space-y-4">
-            <InfoCard icon={Mail} title="E-mail" value="contato@igovia.com.br" />
-            <InfoCard icon={Linkedin} title="LinkedIn" value="IGOV.IA" />
-            <InfoCard icon={MapPin} title="Atuação" value="Brasil · Atendimento nacional e remoto" />
-            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
-              <h3 className="text-sm font-semibold text-foreground">Parcerias institucionais</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                O IGOV.IA mantém parcerias com universidades, órgãos públicos e empresas. Entre em
-                contato para conhecer possibilidades de colaboração.
-              </p>
-            </div>
-          </aside>
+          </Reveal>
         </div>
       </section>
     </PageShell>
-  );
-}
-
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
-  return (
-    <label className="block">
-      <span className="text-sm font-medium text-foreground">{label}{required && <span className="text-primary"> *</span>}</span>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
-      />
-    </label>
-  );
-}
-
-function InfoCard({ icon: Icon, title, value }: { icon: React.ComponentType<{ className?: string }>; title: string; value: string }) {
-  return (
-    <div className="flex items-start gap-4 rounded-2xl border border-border bg-card/60 p-5">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary">
-        <Icon className="h-5 w-5" />
-      </div>
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{title}</p>
-        <p className="mt-1 text-sm font-medium text-foreground">{value}</p>
-      </div>
-    </div>
   );
 }

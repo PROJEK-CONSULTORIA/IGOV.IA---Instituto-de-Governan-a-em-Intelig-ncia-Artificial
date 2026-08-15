@@ -1,38 +1,70 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/igovia-logo.png.asset.json";
 
+const columns = [
+  {
+    title: "Instituto",
+    links: [
+      { to: "/instituto", label: "Sobre o IGOV.IA" },
+      { to: "/framework", label: "Framework" },
+      { to: "/contato", label: "Contato" },
+    ],
+  },
+  {
+    title: "Soluções",
+    links: [
+      { to: "/solucoes", label: "Diagnóstico" },
+      { to: "/solucoes", label: "Consultoria" },
+      { to: "/solucoes", label: "Educação Executiva" },
+    ],
+  },
+  {
+    title: "Conteúdo",
+    links: [
+      { to: "/knowledge-hub", label: "Knowledge Hub" },
+      { to: "/forum", label: "AI Governance Forum" },
+    ],
+  },
+] as const;
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-card/40">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div className="lg:col-span-2">
-          <img src={logo.url} alt="IGOV.IA" className="h-10 w-auto" />
-          <p className="mt-4 max-w-md text-sm text-muted-foreground">
-            Instituto de Governança em Inteligência Artificial. Promovemos a adoção ética,
-            segura e estratégica da IA em organizações públicas e privadas.
+    <footer className="border-t border-border bg-ink">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-4">
+          <div>
+            <img src={logo.url} alt="IGOV.IA" className="h-12 w-auto brightness-0 invert" />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-foreground/60">
+              Instituto de Governança em Inteligência Artificial. Sua jornada segura na era da IA.
+            </p>
+          </div>
+          {columns.map((col) => (
+            <div key={col.title}>
+              <p className="text-xs uppercase tracking-[0.2em] text-primary">{col.title}</p>
+              <ul className="mt-5 space-y-3">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.to} className="text-sm text-ink-foreground/70 transition-colors hover:text-ink-foreground">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-ink-foreground/10 pt-8">
+          <p className="text-xs text-ink-foreground/50">
+            © {new Date().getFullYear()} IGOV.IA — INSTITUTO DE GOVERNANÇA EM INTELIGÊNCIA ARTIFICIAL
           </p>
-        </div>
-        <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">Instituto</h3>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/sobre" className="hover:text-foreground">Sobre</Link></li>
-            <li><Link to="/o-que-fazemos" className="hover:text-foreground">O que fazemos</Link></li>
-            <li><Link to="/indice-governanca-ia" className="hover:text-foreground">Índice de Governança</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">Conteúdo</h3>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/publicacoes" className="hover:text-foreground">Publicações</Link></li>
-            <li><Link to="/eventos" className="hover:text-foreground">Eventos</Link></li>
-            <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} IGOV.IA — INSTITUTO DE GOVERNANÇA EM INTELIGÊNCIA ARTIFICIAL.</p>
-          <p>Governança · Ética · Inovação</p>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>
