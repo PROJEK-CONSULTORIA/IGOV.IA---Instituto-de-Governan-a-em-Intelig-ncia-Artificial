@@ -14,6 +14,7 @@ import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as InstitutoRouteImport } from './routes/instituto'
 import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as ForumRouteImport } from './routes/forum'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SolucoesRoute = SolucoesRouteImport.update({
@@ -41,6 +42,11 @@ const ForumRoute = ForumRouteImport.update({
   path: '/forum',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/instituto': typeof InstitutoRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/instituto': typeof InstitutoRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
   '/instituto': typeof InstitutoRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contato'
     | '/forum'
     | '/framework'
     | '/instituto'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contato'
     | '/forum'
     | '/framework'
     | '/instituto'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contato'
     | '/forum'
     | '/framework'
     | '/instituto'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
   ForumRoute: typeof ForumRoute
   FrameworkRoute: typeof FrameworkRoute
   InstitutoRoute: typeof InstitutoRoute
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForumRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
   ForumRoute: ForumRoute,
   FrameworkRoute: FrameworkRoute,
   InstitutoRoute: InstitutoRoute,
