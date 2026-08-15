@@ -1,12 +1,22 @@
 import type { ReactNode } from "react";
+import { useRouterState } from "@tanstack/react-router";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
-export function PageShell({ children }: { children: ReactNode }) {
+export function PageShell({
+  children,
+  transparentHeader = false,
+}: {
+  children: ReactNode;
+  transparentHeader?: boolean;
+}) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <SiteHeader />
-      <main className="flex-1">{children}</main>
+      <main key={pathname} className={`flex-1 animate-fade-in ${transparentHeader ? "" : "pt-20"}`}>
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );
