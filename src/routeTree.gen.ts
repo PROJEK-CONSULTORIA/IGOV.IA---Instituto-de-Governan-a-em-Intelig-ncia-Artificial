@@ -13,6 +13,7 @@ import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
+import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
 import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as EventosRouteImport } from './routes/eventos'
@@ -37,6 +38,11 @@ const PublicacoesRoute = PublicacoesRouteImport.update({
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
   id: '/o-que-fazemos',
   path: '/o-que-fazemos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
+  id: '/knowledge-hub',
+  path: '/knowledge-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndiceGovernancaIaRoute = IndiceGovernancaIaRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/eventos': typeof EventosRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/eventos': typeof EventosRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/eventos': typeof EventosRoute
   '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/eventos'
     | '/framework'
     | '/indice-governanca-ia'
+    | '/knowledge-hub'
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/eventos'
     | '/framework'
     | '/indice-governanca-ia'
+    | '/knowledge-hub'
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/eventos'
     | '/framework'
     | '/indice-governanca-ia'
+    | '/knowledge-hub'
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   EventosRoute: typeof EventosRoute
   FrameworkRoute: typeof FrameworkRoute
   IndiceGovernancaIaRoute: typeof IndiceGovernancaIaRoute
+  KnowledgeHubRoute: typeof KnowledgeHubRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
   PublicacoesRoute: typeof PublicacoesRoute
   SobreRoute: typeof SobreRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/o-que-fazemos'
       fullPath: '/o-que-fazemos'
       preLoaderRoute: typeof OQueFazemosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge-hub': {
+      id: '/knowledge-hub'
+      path: '/knowledge-hub'
+      fullPath: '/knowledge-hub'
+      preLoaderRoute: typeof KnowledgeHubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/indice-governanca-ia': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   EventosRoute: EventosRoute,
   FrameworkRoute: FrameworkRoute,
   IndiceGovernancaIaRoute: IndiceGovernancaIaRoute,
+  KnowledgeHubRoute: KnowledgeHubRoute,
   OQueFazemosRoute: OQueFazemosRoute,
   PublicacoesRoute: PublicacoesRoute,
   SobreRoute: SobreRoute,
