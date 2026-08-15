@@ -13,6 +13,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
+import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const IndiceGovernancaIaRoute = IndiceGovernancaIaRouteImport.update({
   path: '/indice-governanca-ia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FrameworkRoute = FrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventosRoute = EventosRouteImport.update({
   id: '/eventos',
   path: '/eventos',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
+  '/framework': typeof FrameworkRoute
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/framework'
     | '/indice-governanca-ia'
     | '/o-que-fazemos'
     | '/publicacoes'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/framework'
     | '/indice-governanca-ia'
     | '/o-que-fazemos'
     | '/publicacoes'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/eventos'
+    | '/framework'
     | '/indice-governanca-ia'
     | '/o-que-fazemos'
     | '/publicacoes'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   EventosRoute: typeof EventosRoute
+  FrameworkRoute: typeof FrameworkRoute
   IndiceGovernancaIaRoute: typeof IndiceGovernancaIaRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
   PublicacoesRoute: typeof PublicacoesRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndiceGovernancaIaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/framework': {
+      id: '/framework'
+      path: '/framework'
+      fullPath: '/framework'
+      preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/eventos': {
       id: '/eventos'
       path: '/eventos'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   EventosRoute: EventosRoute,
+  FrameworkRoute: FrameworkRoute,
   IndiceGovernancaIaRoute: IndiceGovernancaIaRoute,
   OQueFazemosRoute: OQueFazemosRoute,
   PublicacoesRoute: PublicacoesRoute,
