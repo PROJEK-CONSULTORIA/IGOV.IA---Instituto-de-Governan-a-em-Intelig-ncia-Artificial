@@ -80,7 +80,7 @@ function ServicosPage() {
             <p className="mt-2 text-muted-foreground">Conheça o Índice de Governança em IA ou fale com nossa equipe.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/indice-governanca-ia" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground hover:bg-card">Ver o Índice</Link>
+            <Link to="/framework" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground hover:bg-card">Ver o Índice</Link>
             <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Fale conosco <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>

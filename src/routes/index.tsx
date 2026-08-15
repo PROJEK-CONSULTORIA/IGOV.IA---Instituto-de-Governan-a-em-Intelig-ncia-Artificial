@@ -55,13 +55,13 @@ function Index() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              to="/o-que-fazemos"
+              to="/solucoes"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Conheça nossas soluções <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/indice-governanca-ia"
+              to="/framework"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-card"
             >
               Índice de Governança em IA
@@ -157,7 +157,7 @@ function Index() {
             Conheça nossa proposta institucional, metodologia e como podemos apoiar sua organização.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/sobre" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+            <Link to="/instituto" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
               Conheça o Instituto <ArrowRight className="h-4 w-4" />
             </Link>
             <Link to="/contato" className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-card">

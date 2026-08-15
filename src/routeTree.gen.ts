@@ -9,37 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as PublicacoesRouteImport } from './routes/publicacoes'
-import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
-import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
-import { Route as EventosRouteImport } from './routes/eventos'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
+import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
+import { Route as InstitutoRouteImport } from './routes/instituto'
+import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as ForumRouteImport } from './routes/forum'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublicacoesRoute = PublicacoesRouteImport.update({
-  id: '/publicacoes',
-  path: '/publicacoes',
+const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
+  id: '/knowledge-hub',
+  path: '/knowledge-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OQueFazemosRoute = OQueFazemosRouteImport.update({
-  id: '/o-que-fazemos',
-  path: '/o-que-fazemos',
+const InstitutoRoute = InstitutoRouteImport.update({
+  id: '/instituto',
+  path: '/instituto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndiceGovernancaIaRoute = IndiceGovernancaIaRouteImport.update({
-  id: '/indice-governanca-ia',
-  path: '/indice-governanca-ia',
+const FrameworkRoute = FrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventosRoute = EventosRouteImport.update({
-  id: '/eventos',
-  path: '/eventos',
+const ForumRoute = ForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -56,106 +56,106 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
-  '/eventos': typeof EventosRoute
-  '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
-  '/o-que-fazemos': typeof OQueFazemosRoute
-  '/publicacoes': typeof PublicacoesRoute
-  '/sobre': typeof SobreRoute
+  '/forum': typeof ForumRoute
+  '/framework': typeof FrameworkRoute
+  '/instituto': typeof InstitutoRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
-  '/eventos': typeof EventosRoute
-  '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
-  '/o-que-fazemos': typeof OQueFazemosRoute
-  '/publicacoes': typeof PublicacoesRoute
-  '/sobre': typeof SobreRoute
+  '/forum': typeof ForumRoute
+  '/framework': typeof FrameworkRoute
+  '/instituto': typeof InstitutoRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
-  '/eventos': typeof EventosRoute
-  '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
-  '/o-que-fazemos': typeof OQueFazemosRoute
-  '/publicacoes': typeof PublicacoesRoute
-  '/sobre': typeof SobreRoute
+  '/forum': typeof ForumRoute
+  '/framework': typeof FrameworkRoute
+  '/instituto': typeof InstitutoRoute
+  '/knowledge-hub': typeof KnowledgeHubRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/contato'
-    | '/eventos'
-    | '/indice-governanca-ia'
-    | '/o-que-fazemos'
-    | '/publicacoes'
-    | '/sobre'
+    | '/forum'
+    | '/framework'
+    | '/instituto'
+    | '/knowledge-hub'
+    | '/solucoes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contato'
-    | '/eventos'
-    | '/indice-governanca-ia'
-    | '/o-que-fazemos'
-    | '/publicacoes'
-    | '/sobre'
+    | '/forum'
+    | '/framework'
+    | '/instituto'
+    | '/knowledge-hub'
+    | '/solucoes'
   id:
     | '__root__'
     | '/'
     | '/contato'
-    | '/eventos'
-    | '/indice-governanca-ia'
-    | '/o-que-fazemos'
-    | '/publicacoes'
-    | '/sobre'
+    | '/forum'
+    | '/framework'
+    | '/instituto'
+    | '/knowledge-hub'
+    | '/solucoes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
-  EventosRoute: typeof EventosRoute
-  IndiceGovernancaIaRoute: typeof IndiceGovernancaIaRoute
-  OQueFazemosRoute: typeof OQueFazemosRoute
-  PublicacoesRoute: typeof PublicacoesRoute
-  SobreRoute: typeof SobreRoute
+  ForumRoute: typeof ForumRoute
+  FrameworkRoute: typeof FrameworkRoute
+  InstitutoRoute: typeof InstitutoRoute
+  KnowledgeHubRoute: typeof KnowledgeHubRoute
+  SolucoesRoute: typeof SolucoesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/publicacoes': {
-      id: '/publicacoes'
-      path: '/publicacoes'
-      fullPath: '/publicacoes'
-      preLoaderRoute: typeof PublicacoesRouteImport
+    '/knowledge-hub': {
+      id: '/knowledge-hub'
+      path: '/knowledge-hub'
+      fullPath: '/knowledge-hub'
+      preLoaderRoute: typeof KnowledgeHubRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/o-que-fazemos': {
-      id: '/o-que-fazemos'
-      path: '/o-que-fazemos'
-      fullPath: '/o-que-fazemos'
-      preLoaderRoute: typeof OQueFazemosRouteImport
+    '/instituto': {
+      id: '/instituto'
+      path: '/instituto'
+      fullPath: '/instituto'
+      preLoaderRoute: typeof InstitutoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/indice-governanca-ia': {
-      id: '/indice-governanca-ia'
-      path: '/indice-governanca-ia'
-      fullPath: '/indice-governanca-ia'
-      preLoaderRoute: typeof IndiceGovernancaIaRouteImport
+    '/framework': {
+      id: '/framework'
+      path: '/framework'
+      fullPath: '/framework'
+      preLoaderRoute: typeof FrameworkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/eventos': {
-      id: '/eventos'
-      path: '/eventos'
-      fullPath: '/eventos'
-      preLoaderRoute: typeof EventosRouteImport
+    '/forum': {
+      id: '/forum'
+      path: '/forum'
+      fullPath: '/forum'
+      preLoaderRoute: typeof ForumRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -178,11 +178,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
-  EventosRoute: EventosRoute,
-  IndiceGovernancaIaRoute: IndiceGovernancaIaRoute,
-  OQueFazemosRoute: OQueFazemosRoute,
-  PublicacoesRoute: PublicacoesRoute,
-  SobreRoute: SobreRoute,
+  ForumRoute: ForumRoute,
+  FrameworkRoute: FrameworkRoute,
+  InstitutoRoute: InstitutoRoute,
+  KnowledgeHubRoute: KnowledgeHubRoute,
+  SolucoesRoute: SolucoesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
