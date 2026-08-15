@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
@@ -18,6 +19,11 @@ import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
+  '/solucoes': typeof SolucoesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
+    | '/solucoes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
+    | '/solucoes'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/o-que-fazemos'
     | '/publicacoes'
     | '/sobre'
+    | '/solucoes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,10 +144,18 @@ export interface RootRouteChildren {
   OQueFazemosRoute: typeof OQueFazemosRoute
   PublicacoesRoute: typeof PublicacoesRoute
   SobreRoute: typeof SobreRoute
+  SolucoesRoute: typeof SolucoesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   OQueFazemosRoute: OQueFazemosRoute,
   PublicacoesRoute: PublicacoesRoute,
   SobreRoute: SobreRoute,
+  SolucoesRoute: SolucoesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
