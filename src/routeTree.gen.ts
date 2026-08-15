@@ -15,6 +15,7 @@ import { Route as InstitutoRouteImport } from './routes/instituto'
 import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as ForumRouteImport } from './routes/forum'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as IndexRouteImport } from './routes/index'
 
 const SolucoesRoute = SolucoesRouteImport.update({
   id: '/solucoes',
@@ -46,8 +47,14 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
@@ -56,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
@@ -65,6 +73,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/forum': typeof ForumRoute
   '/framework': typeof FrameworkRoute
@@ -75,6 +84,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/contato'
     | '/forum'
     | '/framework'
@@ -83,6 +93,7 @@ export interface FileRouteTypes {
     | '/solucoes'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | '/contato'
     | '/forum'
     | '/framework'
@@ -91,6 +102,7 @@ export interface FileRouteTypes {
     | '/solucoes'
   id:
     | '__root__'
+    | '/'
     | '/contato'
     | '/forum'
     | '/framework'
@@ -100,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   ForumRoute: typeof ForumRoute
   FrameworkRoute: typeof FrameworkRoute
@@ -152,10 +165,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   ForumRoute: ForumRoute,
   FrameworkRoute: FrameworkRoute,
