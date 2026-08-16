@@ -57,6 +57,44 @@ const explore = [
   { icon: Calendar, t: "AI Governance Forum", d: "Encontros e debates sobre o futuro da governança.", to: "/forum" as const },
 ];
 
+const news = [
+  {
+    title: "IGOV.IA é selecionado para integrar o Minex Hub e contribuir com a inovação no setor de mineração baiano",
+    date: "16 Jun 2026",
+    category: "Negócios",
+    url: "https://tibahia.com/negocios/igov-ia-e-selecionado-para-integrar-o-minex-hub-e-contribuir-com-a-inovacao-no-setor-de-mineracao-baiano/",
+    image: "https://tibahia.com/wp-content/uploads/2026/06/igovia-e-selecionado-para-integrar-o-minex-hub.jpg",
+  },
+  {
+    title: "TRE-BA Realiza Avaliação de Maturidade em Inteligência Artificial com Framework IGOVIA",
+    date: "26 Mai 2026",
+    category: "Governo",
+    url: "https://tibahia.com/govorg/tre-ba-realiza-avaliacao-de-maturidade-em-inteligencia-artificial-com-framework-igovia/",
+    image: "https://tibahia.com/wp-content/uploads/2026/05/tre-bahia.jpg",
+  },
+  {
+    title: "IGOVIA: Plataforma Brasileira de IA Impulsiona a Governança e a Maturidade Digital nas Organizações",
+    date: "03 Mar 2026",
+    category: "Startups",
+    url: "https://tibahia.com/startups/igovia-plataforma-brasileira-de-ia-impulsiona-a-governanca-e-a-maturidade-digital-nas-organizacoes/",
+    image: "https://tibahia.com/wp-content/uploads/2026/03/igovia-fabio-martins-770.jpg",
+  },
+  {
+    title: "FIEB promove workshop sobre Governança em IA para gestores e executivos",
+    date: "10 Fev 2026",
+    category: "Eventos",
+    url: "https://tibahia.com/eventos/fieb-promove-workshop-sobre-governanca-em-ia-para-gestores-e-executivos/",
+    image: "https://tibahia.com/wp-content/uploads/2026/02/fabio-martins-e-marcone-delano-fieb.jpg",
+  },
+  {
+    title: "Fábio Martins lança segundo livro para líderes, gestores e executivos que buscam implementar governança sólida em soluções de IA nas organizações",
+    date: "06 Dez 2025",
+    category: "Mídia",
+    url: "https://tibahia.com/midia/fabio-martins-lanca-segundo-livro-para-lideres-gestores-e-executivos-que-buscam-implementar-governanca-solida-em-solucoes-de-ia-nas-organizacoes/",
+    image: "https://tibahia.com/wp-content/uploads/2025/12/fabio-martins-novo-livro-governanca-em-ia-4-770.jpg",
+  },
+];
+
 const cardClass =
   "group rounded-2xl border border-border bg-card/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-card hover:shadow-[0_20px_50px_-30px_var(--color-primary)]";
 
@@ -250,6 +288,57 @@ function Index() {
                 className="h-16 w-auto max-w-[240px] object-contain transition-transform duration-300 hover:scale-105 sm:h-20"
               />
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* IGOV.IA na mídia */}
+      <section className="border-t border-border/60 bg-black">
+        <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mb-14 max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">IGOV.IA na mídia</p>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-5xl">
+                O impacto do IGOV.IA repercutido na imprensa.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Reportagens, entrevistas e coberturas que destacam a atuação do Instituto na governança de IA.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {news.map((n, i) => (
+              <Reveal key={n.url} delay={i * 70}>
+                <a
+                  href={n.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={n.image}
+                      alt={n.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-primary backdrop-blur">
+                      {n.category}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <div className="flex items-center justify-between">
+                      <time className="text-xs font-medium text-muted-foreground">{n.date}</time>
+                    </div>
+                    <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">{n.title}</h3>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                      Ler matéria
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </a>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
