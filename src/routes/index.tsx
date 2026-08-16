@@ -6,6 +6,7 @@ import { Parallax } from "@/components/motion/Parallax";
 import { HeroStatsPanel } from "@/components/HeroStatsPanel";
 import semantixLogo from "@/assets/semantix.png.asset.json";
 import jexLogo from "@/assets/jex.png.asset.json";
+import anhangueraLogo from "@/assets/anhanguera.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -271,22 +272,36 @@ function Index() {
               </h2>
             </div>
           </Reveal>
-          <div className="mt-14 grid items-center justify-items-center gap-10 sm:grid-cols-2">
+          <div className="mt-14 grid items-center justify-items-center gap-12 sm:grid-cols-3">
             <Reveal>
-              <img
-                src={semantixLogo.url}
-                alt="Semantix — parceiro estratégico do IGOV.IA"
-                loading="lazy"
-                className="h-16 w-auto max-w-[240px] object-contain transition-transform duration-300 hover:scale-105 sm:h-20"
-              />
+              <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
+                <img
+                  src={semantixLogo.url}
+                  alt="Semantix — parceiro estratégico do IGOV.IA"
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
             </Reveal>
             <Reveal delay={90}>
-              <img
-                src={jexLogo.url}
-                alt="J.Ex — parceiro estratégico do IGOV.IA"
-                loading="lazy"
-                className="h-16 w-auto max-w-[240px] object-contain transition-transform duration-300 hover:scale-105 sm:h-20"
-              />
+              <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
+                <img
+                  src={jexLogo.url}
+                  alt="J.Ex — parceiro estratégico do IGOV.IA"
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            </Reveal>
+            <Reveal delay={180}>
+              <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
+                <img
+                  src={anhangueraLogo.url}
+                  alt="Anhanguera — parceiro estratégico do IGOV.IA"
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
             </Reveal>
           </div>
         </div>
