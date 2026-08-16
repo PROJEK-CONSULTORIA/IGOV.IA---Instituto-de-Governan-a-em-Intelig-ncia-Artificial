@@ -18,10 +18,6 @@ const proximos = [
   { data: "12/11/2026", local: "Quality Hotel · Salvador - BA", titulo: "AI Governance Forum Salvador 2026", desc: "Rua Dr. José Peroba, 244 — Stiep, Salvador - BA." },
 ];
 
-const anteriores = [
-  { data: "2025", titulo: "Lançamento do Framework IGOV.IA", desc: "Apresentação pública das 10 dimensões da governança em IA." },
-  { data: "2025", titulo: "Mesa-redonda: Ética algorítmica", desc: "Discussão sobre transparência e auditabilidade em sistemas de IA." },
-];
 
 function EventosPage() {
   return (
@@ -49,20 +45,6 @@ function EventosPage() {
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-card/30">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Eventos anteriores</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {anteriores.map((e) => (
-              <article key={e.titulo} className="rounded-2xl border border-border bg-background p-6">
-                <span className="text-xs font-semibold uppercase tracking-wider text-primary">{e.data}</span>
-                <h3 className="mt-2 text-lg font-semibold text-foreground">{e.titulo}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{e.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
     </PageShell>
   );
 }
