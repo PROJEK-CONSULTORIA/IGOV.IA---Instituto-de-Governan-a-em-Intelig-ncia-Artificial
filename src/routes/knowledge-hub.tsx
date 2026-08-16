@@ -17,6 +17,78 @@ export const Route = createFileRoute("/knowledge-hub")({
 const publicacoes = [
   {
     categoria: "Artigo",
+    titulo: "A IA Generativa substituirá os aplicativos atuais?",
+    resumo:
+      "Reflexão sobre o futuro dos aplicativos tradicionais diante do avanço acelerado da IA Generativa e como essa transformação impacta usuários, empresas e desenvolvedores.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/ia-generativa-substituir%C3%A1-os-aplicativos-atuais-f%C3%A1bio-martins-ahsuf/?trackingId=YZYtu%2FhRQbqQU4dvI5wycQ%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A IA Generativa está sedenta por água e energia.",
+    resumo:
+      "Análise sobre o consumo de recursos naturais pela Inteligência Artificial generativa e os desafios de sustentabilidade envolvidos em sua operação em larga escala.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/ia-generativa-est%C3%A1-sedenta-por-%C3%A1gua-e-energia-f%C3%A1bio-martins-j486f/?trackingId=j4mDdYgfQR6WvbSqjINNdg%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: 'A "garantia" da ética por trás da Inteligência Artificial.',
+    resumo:
+      "Uma discussão sobre como garantir que a ética seja efetivamente incorporada ao desenvolvimento e uso da Inteligência Artificial, indo além de princípios declarados.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/garantia-da-%C3%A9tica-por-tr%C3%A1s-intelig%C3%AAncia-artificial-f%C3%A1bio-martins-vezjf/?trackingId=ovPsJ6GXQiGo5QDoUR60Pg%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A Inteligência Artificial como força de transformação da geopolítica mundial.",
+    resumo:
+      "Análise sobre como a IA está redefinindo o equilíbrio de poder entre nações, moldando alianças estratégicas e disputas por soberania tecnológica.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/intelig%C3%AAncia-artificial-como-for%C3%A7a-de-transforma%C3%A7%C3%A3o-f%C3%A1bio-martins-sfq2f/?trackingId=ID%2F6SieWTXyKNOa90kSJLA%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A inteligência artificial no Poder Judiciário brasileiro.",
+    resumo:
+      "Panorama sobre a adoção da IA no Judiciário brasileiro, seus impactos na eficiência processual e os desafios éticos e regulatórios envolvidos.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/intelig%C3%AAncia-artificial-poder-judici%C3%A1rio-brasileiro-f%C3%A1bio-martins-xhvzf/?trackingId=EihYvpvOQOiitnJspn92Qg%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Relatório preliminar sobre a regulamentação da IA no Brasil.",
+    resumo:
+      "Análise do panorama regulatório brasileiro para Inteligência Artificial, com base em marcos legais, propostas legislativas e tendências internacionais.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/relat%C3%B3rio-preliminar-sobre-regulamenta%C3%A7%C3%A3o-da-ia-f%C3%A1bio-martins-p1u6e/?trackingId=2JQzP6wIQRSX25QhiEA3JA%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Os Princípios da OCDE sobre a Inteligência Artificial.",
+    resumo:
+      "Apresentação e análise dos princípios da OCDE para IA, sua relevância para a governança e como orientam a adoção responsável da tecnologia em escala global.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/os-princ%C3%ADpios-da-ocde-sobre-intelig%C3%AAncia-artificial-f%C3%A1bio-martins-2hp1f/?trackingId=Z9V0C9%2BaT4iX1Mx8OQC3Lg%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "O impacto da IA conversacional nas instituições de ensino.",
+    resumo:
+      "Reflexão sobre as transformações no ensino provocadas pela IA conversacional, entre oportunidades pedagógicas e riscos de dependência e desigualdade.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/o-impacto-da-ia-conversacional-nas-institui%C3%A7%C3%B5es-de-f%C3%A1bio-martins-qhjce/?trackingId=S80vhpNXTUKFfsUiRb6u%2Fg%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
     titulo: "Você sabe quando NÃO usar a IA Generativa?",
     resumo:
       "Reflexão sobre os limites da adoção de IA Generativa e os cenários em que seu uso pode ser inadequado ou contraproducente na governança de TIC.",
