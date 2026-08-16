@@ -6,9 +6,9 @@ import { PageShell, PageHero } from "@/components/PageShell";
 export const Route = createFileRoute("/knowledge-hub")({
   head: () => ({
     meta: [
-      { title: "Knowledge Hub — IGOV.IA" },
+      { title: "Publicações — IGOV.IA" },
       { name: "description", content: "Artigos, relatórios e estudos sobre governança, ética, regulamentação e práticas em Inteligência Artificial." },
-      { property: "og:title", content: "Knowledge Hub — IGOV.IA" },
+      { property: "og:title", content: "Publicações — IGOV.IA" },
       { property: "og:description", content: "Conteúdos sobre governança, ética, regulamentação e práticas em Inteligência Artificial." },
     ],
   }),
@@ -271,7 +271,12 @@ const publicacoes: Publicacao[] = [
   },
 ];
 
-const tipos = ["Todos", "Artigo", "Relatório"] as const;
+const tipos = ["Todos", "Artigos", "Relatórios"] as const;
+const tipoMap: Record<string, string> = {
+  Todos: "Todos",
+  Artigos: "Artigo",
+  Relatórios: "Relatório",
+};
 const temas = [
   "Todos",
   "Tendências & Relatórios",
@@ -300,7 +305,7 @@ function PublicacoesPage() {
         p.resumo.toLowerCase().includes(busca.toLowerCase()) ||
         p.tema.toLowerCase().includes(busca.toLowerCase()) ||
         p.autor.toLowerCase().includes(busca.toLowerCase());
-      const matchTipo = tipoFiltro === "Todos" || p.categoria === tipoFiltro;
+      const matchTipo = tipoFiltro === "Todos" || p.categoria === tipoMap[tipoFiltro];
       const matchTema = temaFiltro === "Todos" || p.tema === temaFiltro;
       return matchBusca && matchTipo && matchTema;
     });
@@ -324,7 +329,7 @@ function PublicacoesPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Knowledge Hub"
+        eyebrow="Publicações"
         title="Conhecimento aplicado para a governança da IA."
         description="Pesquisas, artigos e relatórios produzidos pelo Instituto e seus parceiros."
       />
