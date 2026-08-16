@@ -4,9 +4,6 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { HeroStatsPanel } from "@/components/HeroStatsPanel";
-import semantixLogo from "@/assets/semantix.png.asset.json";
-import jexLogo from "@/assets/jex.png.asset.json";
-import anhangueraLogo from "@/assets/anhanguera.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -276,7 +273,7 @@ function Index() {
             <Reveal>
               <div className="flex h-56 w-full max-w-[560px] items-center justify-center sm:h-64">
                 <img
-                  src={semantixLogo.url}
+                  src={"/parceiro-semantix.png"}
                   alt="Semantix — parceiro estratégico do IGOV.IA"
                   loading="lazy"
                   className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
@@ -286,7 +283,7 @@ function Index() {
             <Reveal delay={90}>
               <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
                 <img
-                  src={jexLogo.url}
+                  src={"/parceiro-jex.png"}
                   alt="J.Ex — parceiro estratégico do IGOV.IA"
                   loading="lazy"
                   className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
@@ -296,7 +293,7 @@ function Index() {
             <Reveal delay={180}>
               <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
                 <img
-                  src={anhangueraLogo.url}
+                  src={"/parceiro-anhanguera.png"}
                   alt="Anhanguera — parceiro estratégico do IGOV.IA"
                   loading="lazy"
                   className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
