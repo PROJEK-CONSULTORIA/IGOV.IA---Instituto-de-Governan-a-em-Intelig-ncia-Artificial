@@ -60,12 +60,6 @@ const publicacoes = [
     url: "https://www.linkedin.com/pulse/quem-est%C3%A1-liderando-corrida-global-da-ia-f%C3%A1bio-martins-uzk8e/",
     autor: "Fábio Martins",
   },
-  { categoria: "Governança", titulo: "As 10 Dimensões da Governança em IA", resumo: "Visão geral do framework do IGOV.IA para avaliar a maturidade institucional na adoção de Inteligência Artificial.", data: "Em breve" },
-  { categoria: "Ética & Compliance", titulo: "Conformidade regulatória em IA: LGPD e além", resumo: "Como alinhar projetos de IA à LGPD, normativas setoriais e boas práticas internacionais.", data: "Em breve" },
-  { categoria: "Casos Práticos", titulo: "Diagnóstico de maturidade no setor público", resumo: "Aprendizados de aplicação do framework em órgãos públicos brasileiros.", data: "Em breve" },
-  { categoria: "Regulamentação", titulo: "Cenário regulatório global de IA", resumo: "Panorama comparado das principais iniciativas regulatórias e impactos para organizações no Brasil.", data: "Em breve" },
-  { categoria: "Governança", titulo: "Riscos algorítmicos e mitigação institucional", resumo: "Modelos de identificação, classificação e tratamento de riscos em sistemas de IA.", data: "Em breve" },
-  { categoria: "Casos Práticos", titulo: "Agentes inteligentes em operações comerciais", resumo: "Como agentes podem ampliar produtividade preservando supervisão humana." , data: "Em breve" },
 ];
 
 function PublicacoesPage() {
