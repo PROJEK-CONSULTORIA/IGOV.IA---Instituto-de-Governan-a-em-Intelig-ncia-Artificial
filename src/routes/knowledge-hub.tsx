@@ -17,6 +17,33 @@ export const Route = createFileRoute("/knowledge-hub")({
 const publicacoes = [
   {
     categoria: "Artigo",
+    titulo: "Você sabe quando NÃO usar a IA Generativa?",
+    resumo:
+      "Reflexão sobre os limites da adoção de IA Generativa e os cenários em que seu uso pode ser inadequado ou contraproducente na governança de TIC.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/voc%C3%AA-sabe-quando-n%C3%A3o-usar-ia-generativa-governan%C3%A7a-de-tic-tjba-299ef/?trackingId=EC8S0fEzRhiI5Qq7gKFZtQ%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A internet ficou pequena para as empresas de IA",
+    resumo:
+      "Análise sobre o impacto econômico da IA generativa e os desafios de escala enfrentados pelas empresas que disputam o mercado global de Inteligência Artificial.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/internet-ficou-pequena-para-empresas-de-ia-f%C3%A1bio-martins-6q2if/?trackingId=VqOEBcjuQgWHuPNqOeIH9w%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Qual o impacto da computação quântica na inteligência artificial?",
+    resumo:
+      "Uma análise sobre como a computação quântica pode transformar o desenvolvimento e a aplicação da Inteligência Artificial, abrindo novas fronteiras de processamento e capacidade.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/qual-o-impacto-da-computa%C3%A7%C3%A3o-qu%C3%A2ntica-na-intelig%C3%AAncia-f%C3%A1bio-martins-cyfkf/?trackingId=xLgI5trKTQaBKXTSWz4lVw%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
     titulo: "O real impacto da IA Generativa no futuro do trabalho",
     resumo:
       "Fábio Martins analisa como a Inteligência Artificial Generativa está redesenhando funções, competências e modelos de trabalho nas organizações.",
