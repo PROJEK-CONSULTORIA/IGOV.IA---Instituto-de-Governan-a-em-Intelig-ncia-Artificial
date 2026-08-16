@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Activity, Compass, LineChart, Layers, Bot, GraduationCap, ArrowRight } from "lucide-react";
+import { GraduationCap, Compass, Layers, Bot, ArrowRight } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 
 export const Route = createFileRoute("/solucoes")({
@@ -15,12 +15,10 @@ export const Route = createFileRoute("/solucoes")({
 });
 
 const servicos = [
-  { icon: Activity, t: "Diagnóstico de maturidade em IA", d: "Avaliação institucional do estágio atual da organização em relação às dimensões da governança em IA." },
-  { icon: Compass, t: "Estratégia e governança", d: "Estruturação de políticas, modelos de decisão e jornadas para evolução sustentável da IA." },
-  { icon: LineChart, t: "Análise de mercado e inteligência estratégica", d: "Insights de mercado, benchmarks e cenários para sustentar decisões orientadas a dados." },
-  { icon: Layers, t: "Gestão de projetos de IA", d: "Metodologia própria para organizar, acompanhar e entregar projetos de Inteligência Artificial." },
-  { icon: Bot, t: "Agentes inteligentes", d: "Desenvolvimento de agentes para automação, produtividade e suporte à tomada de decisão." },
-  { icon: GraduationCap, t: "Capacitação e gestão de mudança", d: "Formação de lideranças e times, com foco em cultura, ética e adoção responsável." },
+  { icon: GraduationCap, t: "Workshops de Governança em Inteligência Artificial", d: "Capacitamos líderes e equipes para implementar a IA de forma estratégica, ética, segura e alinhada às melhores práticas de governança." },
+  { icon: Compass, t: "Jornada de Governança em Inteligência Artificial", d: "Conduzimos organizações em uma jornada estruturada de diagnóstico, planejamento, implementação e evolução da maturidade em Governança de IA." },
+  { icon: Layers, t: "Gestão de Projetos de Inteligência Artificial", d: "Planejamos e gerenciamos projetos de IA com foco em geração de valor, mitigação de riscos, conformidade regulatória e resultados mensuráveis." },
+  { icon: Bot, t: "Agentes de IA com Governança Regulatória", d: "Desenvolvemos agentes inteligentes corporativos com governança, segurança e conformidade, utilizando a Semantix AI Enterprise Suite para garantir escalabilidade, controle e aderência aos requisitos regulatórios." },
 ];
 
 const jornada = [
