@@ -274,7 +274,7 @@ function Index() {
           </Reveal>
           <div className="mt-14 grid items-center justify-items-center gap-12 sm:grid-cols-3">
             <Reveal>
-              <div className="flex h-28 w-full max-w-[280px] items-center justify-center sm:h-32">
+              <div className="flex h-56 w-full max-w-[560px] items-center justify-center sm:h-64">
                 <img
                   src={semantixLogo.url}
                   alt="Semantix — parceiro estratégico do IGOV.IA"
