@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Linkedin, MapPin, Send } from "lucide-react";
+import { Mail, Linkedin, MapPin, Phone, Send } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { toast } from "sonner";
 
@@ -67,9 +67,28 @@ function ContatoPage() {
           </form>
 
           <aside className="space-y-4">
-            <InfoCard icon={Mail} title="E-mail" value="contato@igovia.com.br" />
+            <InfoCard icon={Mail} title="E-mail" value="fabio.martins@igovia.com.br" />
+            <InfoCard icon={Phone} title="Telefone" value="71 98841-9093" />
             <InfoCard icon={Linkedin} title="LinkedIn" value="IGOV.IA" />
-            <InfoCard icon={MapPin} title="Atuação" value="Brasil · Atendimento nacional e remoto" />
+            <div className="rounded-2xl border border-border bg-card/60 p-5">
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">São Paulo</p>
+                    <p className="mt-1 text-sm font-medium text-foreground">Av. Paulista, 726 — Conj. 1202</p>
+                    <p className="text-sm text-muted-foreground">Bela Vista, São Paulo — SP, 01310-910</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Salvador</p>
+                    <p className="mt-1 text-sm font-medium text-foreground">Alameda Salvador, 1057 — Sl. 911 e 912</p>
+                    <p className="text-sm text-muted-foreground">Caminho das Árvores, Salvador — BA, 41.820-790</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
               <h3 className="text-sm font-semibold text-foreground">Parcerias institucionais</h3>
               <p className="mt-2 text-sm text-muted-foreground">
