@@ -17,6 +17,42 @@ export const Route = createFileRoute("/knowledge-hub")({
 const publicacoes = [
   {
     categoria: "Artigo",
+    titulo: "O real impacto da IA Generativa no futuro do trabalho",
+    resumo:
+      "Fábio Martins analisa como a Inteligência Artificial Generativa está redesenhando funções, competências e modelos de trabalho nas organizações.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/o-real-impacto-da-ia-generativa-futuro-do-trabalho-i-f%C3%A1bio-martins-onnef/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A fusão entre a inteligência humana e a artificial",
+    resumo:
+      "Reflexão sobre a integração entre capacidade humana e sistemas inteligentes na governança de TIC, com base na experiência do TJBA.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/fus%C3%A3o-da-intelig%C3%AAncia-humana-e-artificial-governan%C3%A7a-de-tic-tjba-klunf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Quais os riscos das “memórias” usadas pelas inteligências artificiais?",
+    resumo:
+      "Uma análise sobre privacidade, segurança e governança dos mecanismos de memória persistente em sistemas de Inteligência Artificial.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/quais-os-riscos-das-mem%C3%B3rias-usadas-pelas-artificiais-",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: 'O "viés" pode atrasar o desenvolvimento das inteligências artificiais?',
+    resumo:
+      "Como o viés algorítmico afeta a confiança, a adoção e o avanço responsável das soluções de Inteligência Artificial.",
+    data: "Publicado no LinkedIn",
+    url: "https://www.linkedin.com/pulse/o-vi%C3%A9s-pode-atrasar-desenvolvimento-das-intelig%C3%AAncias-f%C3%A1bio-martins-fthlf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
     titulo: "Quem está liderando a corrida global da IA?",
     resumo:
       "Análise de Fábio Martins sobre o cenário competitivo internacional da Inteligência Artificial e os países que vêm definindo o ritmo da inovação, regulação e investimento em IA.",
