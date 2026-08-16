@@ -36,10 +36,10 @@ function ServicosPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {servicos.map(({ icon: Icon, t, d }) => (
-            <article key={t} className="group rounded-2xl border border-border bg-card/60 p-6 transition-colors hover:border-primary/50 hover:bg-card">
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/15 text-primary">
+            <article key={t} className="group rounded-2xl border border-border bg-card/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-card hover:shadow-[0_20px_50px_-30px_var(--color-primary)]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{t}</h3>
