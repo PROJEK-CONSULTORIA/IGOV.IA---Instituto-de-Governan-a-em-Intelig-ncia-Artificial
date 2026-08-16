@@ -15,9 +15,7 @@ export const Route = createFileRoute("/forum")({
 });
 
 const proximos = [
-  { data: "Em breve", local: "São Paulo · Híbrido", titulo: "Fórum IGOV.IA de Governança em Inteligência Artificial", desc: "Encontro de lideranças públicas e privadas para debater maturidade, riscos e oportunidades da IA." },
-  { data: "Em breve", local: "Online", titulo: "Workshop: Diagnóstico de Maturidade em IA", desc: "Aplicação prática do framework das 10 dimensões da governança em IA." },
-  { data: "Em breve", local: "Brasília", titulo: "Painel: Regulamentação e Setor Público", desc: "Cenário regulatório, LGPD e adoção responsável de IA em órgãos públicos." },
+  { data: "12/11/2026", local: "Quality Hotel · Salvador - BA", titulo: "AI Governance Forum Salvador 2026", desc: "Rua Dr. José Peroba, 244 — Stiep, Salvador - BA." },
 ];
 
 const anteriores = [
