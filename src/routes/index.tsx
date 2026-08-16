@@ -292,6 +292,57 @@ function Index() {
         </div>
       </section>
 
+      {/* IGOV.IA na mídia */}
+      <section className="border-t border-border/60 bg-black">
+        <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mb-14 max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">IGOV.IA na mídia</p>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-5xl">
+                O impacto do IGOV.IA repercutido na imprensa.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Reportagens, entrevistas e coberturas que destacam a atuação do Instituto na governança de IA.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {news.map((n, i) => (
+              <Reveal key={n.url} delay={i * 70}>
+                <a
+                  href={n.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={n.image}
+                      alt={n.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-primary backdrop-blur">
+                      {n.category}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <div className="flex items-center justify-between">
+                      <time className="text-xs font-medium text-muted-foreground">{n.date}</time>
+                    </div>
+                    <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">{n.title}</h3>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                      Ler matéria
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Explore + CTA */}
       <section className="flex min-h-screen items-center border-t border-border/60">
         <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
