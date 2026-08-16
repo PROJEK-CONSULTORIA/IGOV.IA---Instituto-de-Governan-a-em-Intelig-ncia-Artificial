@@ -4,6 +4,8 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { HeroStatsPanel } from "@/components/HeroStatsPanel";
+import semantixLogo from "@/assets/semantix.png.asset.json";
+import jexLogo from "@/assets/jex.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -216,6 +218,38 @@ function Index() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Parceiros Estratégicos */}
+      <section className="border-t border-border/60 bg-white">
+        <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Parceiros Estratégicos</p>
+              <h2 className="mt-4 text-3xl font-bold text-neutral-900 sm:text-4xl">
+                Parcerias que ampliam nossa capacidade de entrega.
+              </h2>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid items-center justify-items-center gap-10 sm:grid-cols-2">
+            <Reveal>
+              <img
+                src={semantixLogo.url}
+                alt="Semantix — parceiro estratégico do IGOV.IA"
+                loading="lazy"
+                className="h-16 w-auto max-w-[240px] object-contain transition-transform duration-300 hover:scale-105 sm:h-20"
+              />
+            </Reveal>
+            <Reveal delay={90}>
+              <img
+                src={jexLogo.url}
+                alt="J.Ex — parceiro estratégico do IGOV.IA"
+                loading="lazy"
+                className="h-16 w-auto max-w-[240px] object-contain transition-transform duration-300 hover:scale-105 sm:h-20"
+              />
+            </Reveal>
           </div>
         </div>
       </section>
