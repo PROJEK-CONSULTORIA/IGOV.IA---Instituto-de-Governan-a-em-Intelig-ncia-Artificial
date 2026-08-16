@@ -16,6 +16,33 @@ export const Route = createFileRoute("/knowledge-hub")({
 
 const publicacoes = [
   {
+    categoria: "Relatório",
+    titulo: "AI Index Report 2026 — Stanford HAI",
+    resumo:
+      "Relatório anual do Stanford Institute for Human-Centered Artificial Intelligence com dados, tendências e análises sobre o estado da Inteligência Artificial no mundo.",
+    data: "Stanford HAI · 2026",
+    url: "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+    autor: "Stanford HAI",
+  },
+  {
+    categoria: "Relatório",
+    titulo: "AI Index Report 2025 — Stanford HAI",
+    resumo:
+      "Edição 2025 do AI Index Report, reunindo indicadores de investimento, pesquisa, desenvolvimento técnico e adoção de IA em escala global.",
+    data: "Stanford HAI · 2025",
+    url: "https://hai.stanford.edu/ai-index/2025-ai-index-report",
+    autor: "Stanford HAI",
+  },
+  {
+    categoria: "Relatório",
+    titulo: "AI Index Report 2024 — Stanford HAI",
+    resumo:
+      "Edição 2024 do AI Index Report, com métricas detalhadas sobre avanços em IA, regulamentação e impactos econômicos e sociais.",
+    data: "Stanford HAI · 2024",
+    url: "https://hai.stanford.edu/ai-index/2024-ai-index-report",
+    autor: "Stanford HAI",
+  },
+  {
     categoria: "Artigo",
     titulo: "A IA Generativa substituirá os aplicativos atuais?",
     resumo:
