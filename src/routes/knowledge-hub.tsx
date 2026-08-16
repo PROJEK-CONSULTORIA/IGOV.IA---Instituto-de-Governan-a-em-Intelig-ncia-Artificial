@@ -305,7 +305,7 @@ function PublicacoesPage() {
         p.resumo.toLowerCase().includes(busca.toLowerCase()) ||
         p.tema.toLowerCase().includes(busca.toLowerCase()) ||
         p.autor.toLowerCase().includes(busca.toLowerCase());
-      const matchTipo = tipoFiltro === "Todos" || p.categoria === tipoFiltro;
+      const matchTipo = tipoFiltro === "Todos" || p.categoria === tipoMap[tipoFiltro];
       const matchTema = temaFiltro === "Todos" || p.tema === temaFiltro;
       return matchBusca && matchTipo && matchTema;
     });
