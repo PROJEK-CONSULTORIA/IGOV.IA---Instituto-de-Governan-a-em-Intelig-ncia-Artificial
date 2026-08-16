@@ -23,7 +23,7 @@ export function SiteFooter() {
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">Conteúdo</h3>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/knowledge-hub" className="hover:text-foreground">Knowledge Hub</Link></li>
+            <li><Link to="/knowledge-hub" className="hover:text-foreground">Publicações</Link></li>
             <li><Link to="/forum" className="hover:text-foreground">AI Governance Forum</Link></li>
             <li><Link to="/contato" className="hover:text-foreground">Contato</Link></li>
           </ul>

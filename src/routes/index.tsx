@@ -51,7 +51,7 @@ const dimensions = [
 const explore = [
   { icon: Gauge, t: "Framework", d: "As 10 dimensões que estruturam a governança de IA.", to: "/framework" as const },
   { icon: Cog, t: "Soluções", d: "Diagnóstico, consultoria, educação e agentes inteligentes.", to: "/solucoes" as const },
-  { icon: BookOpen, t: "Knowledge Hub", d: "Artigos, pesquisas e análises sobre IA responsável.", to: "/knowledge-hub" as const },
+  { icon: BookOpen, t: "Publicações", d: "Artigos, pesquisas e análises sobre IA responsável.", to: "/knowledge-hub" as const },
   { icon: Calendar, t: "AI Governance Forum", d: "Encontros e debates sobre o futuro da governança.", to: "/forum" as const },
 ];
 
