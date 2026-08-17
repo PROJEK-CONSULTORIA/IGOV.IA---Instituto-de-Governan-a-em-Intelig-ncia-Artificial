@@ -4,6 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { HeroStatsPanel } from "@/components/HeroStatsPanel";
+import { Testimonials } from "@/components/Testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
