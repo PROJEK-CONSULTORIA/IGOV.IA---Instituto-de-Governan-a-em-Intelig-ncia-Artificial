@@ -260,6 +260,8 @@ function Index() {
       </section>
 
       {/* Parceiros Estratégicos */}
+      <Testimonials />
+
       <section className="border-t border-border/60 bg-white">
         <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <Reveal>
