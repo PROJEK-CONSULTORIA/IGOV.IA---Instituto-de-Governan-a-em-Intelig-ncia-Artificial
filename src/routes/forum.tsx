@@ -39,7 +39,7 @@ function EventosPage() {
               </div>
               <h3 className="mt-4 text-lg font-semibold text-foreground">{e.titulo}</h3>
               <p className="mt-2 flex-1 text-sm text-muted-foreground">{e.desc}</p>
-              <Link to="/contato" className="mt-6 text-sm font-semibold text-primary">Tenho interesse →</Link>
+              <a href="https://www.aigovernanceforum.com.br" target="_blank" rel="noopener noreferrer" className="mt-6 text-sm font-semibold text-primary transition-colors hover:text-primary/80">Tenho interesse →</a>
             </article>
           ))}
         </div>
