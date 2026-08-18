@@ -23,4 +23,12 @@ export const testimonials: Testimonial[] = [
     testimonial:
       "Uma abordagem embasada na literatura especializada, em linguagem acessível e conduzida por profissionais experientes apoia a Organização no aumento gradativo e consistente na maturidade em IA, tão necessária nos tempos atuais.",
   },
+  {
+    name: "Jaime Gama",
+    role: "Conselheiro",
+    company: "Instituto Brasileiro de Governança Corporativa (IBGC)",
+    photo: "/depoimentos/jaime-gama.jpg",
+    testimonial:
+      "O Instituto de Governança de Inteligência Artificial pode apoiar as organizações a transformar a adoção de IA em uma jornada estruturada, segura e efetivamente conectada à estratégia de negócio. Sua contribuição está em oferecer um olhar integrado sobre maturidade, dados, pessoas, cultura, riscos, ética, compliance e segurança.",
+  },
 ];
