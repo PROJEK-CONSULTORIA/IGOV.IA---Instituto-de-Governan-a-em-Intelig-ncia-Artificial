@@ -7,6 +7,7 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/framework", label: "Framework" },
   { to: "/solucoes", label: "Soluções" },
+  { to: "/cursos", label: "Cursos" },
   { to: "/knowledge-hub", label: "Publicações" },
   { to: "/forum", label: "AI Governance Forum" },
   { to: "/instituto", label: "Instituto" },
