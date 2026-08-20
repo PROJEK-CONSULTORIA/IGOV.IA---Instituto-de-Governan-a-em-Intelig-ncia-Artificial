@@ -22,6 +22,7 @@ import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
+import { Route as CursosGovernancaInteligenciaArtificialExecutivosRouteImport } from './routes/cursos.governanca-inteligencia-artificial-executivos'
 
 const SolucoesRoute = SolucoesRouteImport.update({
   id: '/solucoes',
@@ -88,6 +89,12 @@ const CursosIndexRoute = CursosIndexRouteImport.update({
   path: '/cursos/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CursosGovernancaInteligenciaArtificialExecutivosRoute =
+  CursosGovernancaInteligenciaArtificialExecutivosRouteImport.update({
+    id: '/cursos/governanca-inteligencia-artificial-executivos',
+    path: '/cursos/governanca-inteligencia-artificial-executivos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -117,6 +125,7 @@ export interface FileRoutesByTo {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos': typeof CursosIndexRoute
 }
 export interface FileRoutesById {
@@ -133,6 +142,7 @@ export interface FileRoutesById {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRouteTypes {
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos'
   id:
     | '__root__'
@@ -180,6 +192,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos/'
   fileRoutesById: FileRoutesById
 }
@@ -196,6 +209,7 @@ export interface RootRouteChildren {
   PublicacoesRoute: typeof PublicacoesRoute
   SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
+  CursosGovernancaInteligenciaArtificialExecutivosRoute: typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   CursosIndexRoute: typeof CursosIndexRoute
 }
 
@@ -292,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cursos/governanca-inteligencia-artificial-executivos': {
+      id: '/cursos/governanca-inteligencia-artificial-executivos'
+      path: '/cursos/governanca-inteligencia-artificial-executivos'
+      fullPath: '/cursos/governanca-inteligencia-artificial-executivos'
+      preLoaderRoute: typeof CursosGovernancaInteligenciaArtificialExecutivosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -308,6 +329,8 @@ const rootRouteChildren: RootRouteChildren = {
   PublicacoesRoute: PublicacoesRoute,
   SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
+  CursosGovernancaInteligenciaArtificialExecutivosRoute:
+    CursosGovernancaInteligenciaArtificialExecutivosRoute,
   CursosIndexRoute: CursosIndexRoute,
 }
 export const routeTree = rootRouteImport
