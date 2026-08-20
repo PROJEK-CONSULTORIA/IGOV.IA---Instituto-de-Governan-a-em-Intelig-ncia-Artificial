@@ -222,7 +222,7 @@ const publicacoes: Publicacao[] = [
     data: "22 Abr 2024",
     dataISO: "2024-04-22",
     tema: "Geopolítica & Economia",
-    url: "https://www.linkedin.com/pulse/internet-ficou-pequena-para-empresas-de-ia-f%C3%A1bio-martins-6q2if/?trackingId=VqOEBcjuQgWHuPNqOeIH9w%3D%3D",
+    url: "https://www.linkedin.com/pulse/internet-ficou-pequena-para-empresas-de-ia-f%C3%A1bio-martins-6q2if/?trackingId=EF7IStP8SammKD6tsIXWKA%3D%3D",
     autor: "Fábio Martins",
   },
   {
@@ -233,7 +233,7 @@ const publicacoes: Publicacao[] = [
     data: "17 Abr 2024",
     dataISO: "2024-04-17",
     tema: "IA Generativa & Inovação",
-    url: "https://www.linkedin.com/pulse/qual-o-impacto-da-computa%C3%A7%C3%A3o-qu%C3%A2ntica-na-intelig%C3%AAncia-f%C3%A1bio-martins-cyfkf/?trackingId=xLgI5trKTQaBKXTSWz4lVw%3D%3D",
+    url: "https://www.linkedin.com/newsletters/intelig%C3%AAncia-artificial-7173522160425156609/",
     autor: "Fábio Martins",
   },
   {
@@ -267,6 +267,17 @@ const publicacoes: Publicacao[] = [
     dataISO: "2024-03-13",
     tema: "Ética & Governança",
     url: "https://www.linkedin.com/pulse/o-vi%C3%A9s-pode-atrasar-desenvolvimento-das-intelig%C3%AAncias-f%C3%A1bio-martins-fthlf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Claude 3, o desafiante do ChatGPT",
+    resumo:
+      "Análise sobre o lançamento do Claude 3 pela Anthropic, suas capacidades em comparação ao ChatGPT e as implicações para a competitividade e a governança na corrida dos modelos de linguagem.",
+    data: "11 Mar 2024",
+    dataISO: "2024-03-11",
+    tema: "IA Generativa & Inovação",
+    url: "https://www.linkedin.com/pulse/claude-3-o-desafiante-do-chatgpt-governan%C3%A7a-de-tic-tjba-imrkf/?trackingId=51uyaF5WQyO3qNqnYvDEDA%3D%3D",
     autor: "Fábio Martins",
   },
 ];
