@@ -21,6 +21,7 @@ import { Route as ForumRouteImport } from './routes/forum'
 import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 
 const SolucoesRoute = SolucoesRouteImport.update({
   id: '/solucoes',
@@ -82,6 +83,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CursosIndexRoute = CursosIndexRouteImport.update({
+  id: '/cursos/',
+  path: '/cursos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos': typeof CursosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
+    | '/cursos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   PublicacoesRoute: typeof PublicacoesRoute
   SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
+  CursosIndexRoute: typeof CursosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cursos/': {
+      id: '/cursos/'
+      path: '/cursos'
+      fullPath: '/cursos/'
+      preLoaderRoute: typeof CursosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   PublicacoesRoute: PublicacoesRoute,
   SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
+  CursosIndexRoute: CursosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
