@@ -244,7 +244,7 @@ const publicacoes: Publicacao[] = [
     data: "09 Abr 2024",
     dataISO: "2024-04-09",
     tema: "Futuro do Trabalho",
-    url: "https://www.linkedin.com/pulse/o-real-impacto-da-ia-generativa-futuro-do-trabalho-i-f%C3%A1bio-martins-onnef/",
+    url: "https://www.linkedin.com/pulse/o-real-impacto-da-ia-generativa-futuro-do-trabalho-i-f%C3%A1bio-martins-onnef/?trackingId=ZjRH5DjtTa2yb8WOLU3ZJg%3D%3D",
     autor: "Fábio Martins",
   },
   {
@@ -255,7 +255,7 @@ const publicacoes: Publicacao[] = [
     data: "25 Mar 2024",
     dataISO: "2024-03-25",
     tema: "Ética & Governança",
-    url: "https://www.linkedin.com/pulse/fus%C3%A3o-da-intelig%C3%AAncia-humana-e-artificial-governan%C3%A7a-de-tic-tjba-klunf/",
+    url: "https://www.linkedin.com/pulse/fus%C3%A3o-da-intelig%C3%AAncia-humana-e-artificial-governan%C3%A7a-de-tic-tjba-klunf/?trackingId=WJsjjyFSSuawNEhYQIHxbA%3D%3D",
     autor: "Fábio Martins",
   },
   {
