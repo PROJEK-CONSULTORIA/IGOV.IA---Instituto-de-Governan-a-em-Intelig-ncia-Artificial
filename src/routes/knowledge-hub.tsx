@@ -28,6 +28,182 @@ type Publicacao = {
 
 const publicacoes: Publicacao[] = [
   {
+    categoria: "Artigo",
+    titulo: "A Governança de IA pelo mundo.",
+    resumo:
+      "Panorama das iniciativas, marcos regulatórios e modelos de governança em Inteligência Artificial adotados por diferentes países ao redor do mundo.",
+    data: "12 Out 2025",
+    dataISO: "2025-10-12",
+    tema: "Regulamentação & Política",
+    url: "https://www.linkedin.com/newsletters/intelig%C3%AAncia-artificial-7173522160425156609/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "O Papa Leão XIV e a Inteligência Artificial.",
+    resumo:
+      "Reflexão sobre o posicionamento do Papa Leão XIV diante dos avanços da Inteligência Artificial e os dilemas éticos e morais que a tecnologia coloca para a sociedade.",
+    data: "25 Mai 2025",
+    dataISO: "2025-05-25",
+    tema: "Ética & Governança",
+    url: "https://www.linkedin.com/pulse/o-papa-le%C3%A3o-xiv-e-intelig%C3%AAncia-artificial-f%C3%A1bio-martins-eoqmf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Você está pronto para entregar seu cartão de crédito a um agente de IA?",
+    resumo:
+      "Análise sobre os riscos, a confiança e a segurança envolvidos na delegação de decisões financeiras a agentes autônomos de Inteligência Artificial.",
+    data: "28 Set 2025",
+    dataISO: "2025-09-28",
+    tema: "Segurança & Privacidade",
+    url: "https://www.linkedin.com/pulse/voc%C3%AA-est%C3%A1-pronto-para-entregar-seu-cart%C3%A3o-de-cr%C3%A9dito-um-f%C3%A1bio-martins-aclrf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Inteligência Artificial e a Revolução dos Robôs Sociais.",
+    resumo:
+      "Como os robôs sociais impulsionados por IA estão transformando interações, serviços e relações humanas, com oportunidades e desafios para a governança.",
+    data: "14 Set 2025",
+    dataISO: "2025-09-14",
+    tema: "IA Generativa & Inovação",
+    url: "https://www.linkedin.com/pulse/intelig%C3%AAncia-artificial-e-revolu%C3%A7%C3%A3o-dos-rob%C3%B4s-sociais-f%C3%A1bio-martins-kqxbf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "IA e Resiliência Cibernética: O Novo Pilar da Transformação Digital Sustentável.",
+    resumo:
+      "Por que a resiliência cibernética se tornou pilar essencial da transformação digital e como a IA amplifica tanto a defesa quanto a exposição das organizações.",
+    data: "30 Ago 2025",
+    dataISO: "2025-08-30",
+    tema: "Segurança & Privacidade",
+    url: "https://www.linkedin.com/pulse/ia-e-resili%C3%AAncia-cibern%C3%A9tica-o-novo-pilar-da-digital-f%C3%A1bio-martins-b1qbf/?trackingId=M%2B6vHZuhRJG4JJxMSAodVA%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Luto e IA: o dilema da \u201cressurreição digital\u201d.",
+    resumo:
+      "Os dilemas éticos, emocionais e legais do uso da Inteligência Artificial para recriar a imagem, a voz e a memória de pessoas que já faleceram.",
+    data: "17 Ago 2025",
+    dataISO: "2025-08-17",
+    tema: "Ética & Governança",
+    url: "https://www.linkedin.com/pulse/luto-e-ia-o-dilema-da-ressurrei%C3%A7%C3%A3o-digital-f%C3%A1bio-martins-p1r2f/?trackingId=mQezbPvlQ9mIvwkY59BskA%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A Revolução da IA no Mercado de Trabalho Global: Países que Lideram a Demanda por Profissionais Especializados.",
+    resumo:
+      "Mapeamento dos países que lideram a demanda por profissionais especializados em IA e os impactos da revolução da tecnologia no mercado de trabalho global.",
+    data: "22 Jul 2025",
+    dataISO: "2025-07-22",
+    tema: "Futuro do Trabalho",
+    url: "https://www.linkedin.com/pulse/revolu%C3%A7%C3%A3o-da-ia-mercado-de-trabalho-global-pa%C3%ADses-que-f%C3%A1bio-martins-5zpdf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "O uso militar em combate dos super generais baseados em IA.",
+    resumo:
+      "Análise sobre a aplicação de sistemas de IA em estratégia e combate militar e os desafios éticos, legais e geopolíticos dessa nova fronteira.",
+    data: "06 Jul 2025",
+    dataISO: "2025-07-06",
+    tema: "Geopolítica & Economia",
+    url: "https://www.linkedin.com/pulse/o-uso-militar-em-combate-dos-super-generais-baseados-ia-f%C3%A1bio-martins-coczf/?trackingId=qfAjM3cVQ%2Ba%2B2gxIbub6sw%3D%3D",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Tendências da Inteligência Artificial em 2025 - Pesquisa e Desenvolvimento - Parte I.",
+    resumo:
+      "Primeira parte de uma análise das tendências de pesquisa e desenvolvimento em Inteligência Artificial que devem moldar o cenário da tecnologia em 2025.",
+    data: "08 Jan 2025",
+    dataISO: "2025-01-08",
+    tema: "Tendências & Relatórios",
+    url: "https://www.linkedin.com/newsletters/intelig%C3%AAncia-artificial-7173522160425156609/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A necessidade de alfabetização em Inteligência Artificial nas organizações.",
+    resumo:
+      "Por que a alfabetização em IA se tornou requisito estratégico para organizações e como construir capacidades críticas em todos os níveis.",
+    data: "08 Jun 2025",
+    dataISO: "2025-06-08",
+    tema: "Educação",
+    url: "https://www.linkedin.com/pulse/necessidade-de-alfabetiza%C3%A7%C3%A3o-em-intelig%C3%AAncia-nas-f%C3%A1bio-martins-zzbqf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Consciência Generativa: Será que as máquinas estão acordando?",
+    resumo:
+      "Reflexão sobre os sinais de consciência emergente em sistemas de IA generativa e os limites entre simulação e cognição.",
+    data: "15 Jun 2025",
+    dataISO: "2025-06-15",
+    tema: "IA Generativa & Inovação",
+    url: "https://www.linkedin.com/pulse/consci%C3%AAncia-generativa-ser%C3%A1-que-m%C3%A1quinas-est%C3%A3o-f%C3%A1bio-martins-gaaqf/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Inteligência artificial pode ter inspiração para pintar?",
+    resumo:
+      "Uma investigação sobre a fronteira entre criatividade humana e artificial e se a IA pode desenvolver genuína inspiração artística.",
+    data: "18 Mai 2025",
+    dataISO: "2025-05-18",
+    tema: "IA Generativa & Inovação",
+    url: "https://www.linkedin.com/newsletters/intelig%C3%AAncia-artificial-7173522160425156609/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A Inteligência Artificial e a Economia de Intenção.",
+    resumo:
+      "Como a IA está redefinindo a economia da atenção rumo a uma economia de intenção, transformando consumo, marketing e decisões.",
+    data: "04 Mai 2025",
+    dataISO: "2025-05-04",
+    tema: "Geopolítica & Economia",
+    url: "https://www.linkedin.com/newsletters/intelig%C3%AAncia-artificial-7173522160425156609/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "A inteligência artificial em busca da inteligência fluida.",
+    resumo:
+      "Análise sobre o esforço da pesquisa em IA para alcançar a inteligência fluida, capaz de raciocínio flexível e adaptação entre domínios.",
+    data: "27 Abr 2025",
+    dataISO: "2025-04-27",
+    tema: "IA Generativa & Inovação",
+    url: "https://www.linkedin.com/pulse/busca-da-intelig%C3%AAncia-artificial-pela-fluida-f%C3%A1bio-martins-eg94f/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Os riscos do envenenamento da inteligência artificial.",
+    resumo:
+      "Como o envenenamento de dados compromete modelos de IA, os riscos para segurança e confiança e as medidas de governança para mitigá-los.",
+    data: "23 Mar 2025",
+    dataISO: "2025-03-23",
+    tema: "Segurança & Privacidade",
+    url: "https://www.linkedin.com/pulse/os-riscos-do-envenenamento-da-intelig%C3%AAncia-artificial-f%C3%A1bio-martins-1gu3f/",
+    autor: "Fábio Martins",
+  },
+  {
+    categoria: "Artigo",
+    titulo: "Os cinco níveis de evolução da Inteligência Artificial.",
+    resumo:
+      "Apresentação dos cinco níveis de evolução da IA e o que cada estágio representa para a estratégia, a governança e a sociedade.",
+    data: "16 Fev 2025",
+    dataISO: "2025-02-16",
+    tema: "Tendências & Relatórios",
+    url: "https://www.linkedin.com/pulse/os-cinco-n%C3%ADveis-de-evolu%C3%A7%C3%A3o-da-intelig%C3%AAncia-f%C3%A1bio-martins-7pkyf/",
+    autor: "Fábio Martins",
+  },
+  {
     categoria: "Relatório",
     titulo: "AI Index Report 2026 — Stanford HAI",
     resumo:
