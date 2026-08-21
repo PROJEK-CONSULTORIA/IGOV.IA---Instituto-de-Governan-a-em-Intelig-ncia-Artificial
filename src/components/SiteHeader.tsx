@@ -5,12 +5,12 @@ import logo from "@/assets/igovia-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
+  { to: "/instituto", label: "Instituto" },
   { to: "/framework", label: "Framework" },
   { to: "/solucoes", label: "Soluções" },
   { to: "/cursos", label: "Cursos" },
   { to: "/knowledge-hub", label: "Publicações" },
   { to: "/forum", label: "AI Governance Forum" },
-  { to: "/instituto", label: "Instituto" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
