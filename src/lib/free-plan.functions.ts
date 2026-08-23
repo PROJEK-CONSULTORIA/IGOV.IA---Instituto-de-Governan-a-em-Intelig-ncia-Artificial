@@ -20,8 +20,17 @@ const registerSchema = z.object({
 });
 
 export const registerFreeUser = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => registerSchema.parse(input))
-  .handler(async ({ data }) => {
+  .inputValidator((input: unknown) => input as Record<string, unknown>)
+  .handler(async ({ data: rawInput }) => {
+    const parsed = registerSchema.safeParse(rawInput);
+    if (!parsed.success) {
+      const first = parsed.error.issues[0];
+      return {
+        ok: false as const,
+        message: first?.message ?? "Dados inválidos. Revise o formulário.",
+      };
+    }
+    const data = parsed.data;
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const email = data.email.toLowerCase();
 
@@ -39,9 +48,10 @@ export const registerFreeUser = createServerFn({ method: "POST" })
     });
 
     if (error) {
+      console.error("[registerFreeUser] createUser failed", error.message);
       const message = /already|registered|exists/i.test(error.message)
         ? "Já existe uma conta cadastrada com este e-mail."
-        : "Não foi possível concluir o cadastro. Tente novamente.";
+        : "Não foi possível concluir o cadastro. Tente novamente em instantes.";
       return { ok: false as const, message };
     }
     return { ok: true as const, userId: created.user?.id ?? null };
