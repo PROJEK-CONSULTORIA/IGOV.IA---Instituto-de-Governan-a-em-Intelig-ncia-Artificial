@@ -98,13 +98,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/contato"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-          >
-            Solicitar Diagnóstico
-          </Link>
         </nav>
       </div>
     </header>
