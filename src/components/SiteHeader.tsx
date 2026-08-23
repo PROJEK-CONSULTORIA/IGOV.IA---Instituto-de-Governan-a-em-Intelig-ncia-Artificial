@@ -11,7 +11,7 @@ const nav = [
   { to: "/cursos", label: "Cursos" },
   { to: "/precos", label: "Preços" },
   { to: "/knowledge-hub", label: "Publicações" },
-  { to: "/forum", label: "AI Governance Forum" },
+  { to: "/forum", label: "Eventos" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
@@ -69,12 +69,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/contato"
-            className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_0_0_transparent] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_10px_30px_-10px_var(--color-primary)] sm:inline-flex"
-          >
-            Solicitar Diagnóstico
-          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -104,13 +98,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/contato"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-          >
-            Solicitar Diagnóstico
-          </Link>
         </nav>
       </div>
     </header>
