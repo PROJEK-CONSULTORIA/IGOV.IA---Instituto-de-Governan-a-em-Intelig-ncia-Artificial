@@ -102,6 +102,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link
+            to="/login"
+            onClick={() => setOpen(false)}
+            className="rounded-md px-3 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+          >
+            Entrar
+          </Link>
         </nav>
       </div>
     </header>
