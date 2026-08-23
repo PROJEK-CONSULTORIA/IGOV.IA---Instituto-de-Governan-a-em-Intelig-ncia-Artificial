@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as RecuperarSenhaRouteImport } from './routes/recuperar-senha'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as InstitutoRouteImport } from './routes/instituto'
 import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
@@ -21,9 +23,15 @@ import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as ForumRouteImport } from './routes/forum'
 import { Route as EventosRouteImport } from './routes/eventos'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 import { Route as CursosGovernancaInteligenciaArtificialExecutivosRouteImport } from './routes/cursos.governanca-inteligencia-artificial-executivos'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedRelatorioDiagnosticIdRouteImport } from './routes/_authenticated/relatorio.$diagnosticId'
+import { Route as AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRouteImport } from './routes/_authenticated/diagnostico.$diagnosticId.dimensao.$position'
 
 const SolucoesRoute = SolucoesRouteImport.update({
   id: '/solucoes',
@@ -33,6 +41,11 @@ const SolucoesRoute = SolucoesRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperarSenhaRoute = RecuperarSenhaRouteImport.update({
+  id: '/recuperar-senha',
+  path: '/recuperar-senha',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicacoesRoute = PublicacoesRouteImport.update({
@@ -48,6 +61,11 @@ const PrecosRoute = PrecosRouteImport.update({
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
   id: '/o-que-fazemos',
   path: '/o-que-fazemos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
@@ -85,6 +103,15 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -101,9 +128,32 @@ const CursosGovernancaInteligenciaArtificialExecutivosRoute =
     path: '/cursos/governanca-inteligencia-artificial-executivos',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedRelatorioDiagnosticIdRoute =
+  AuthenticatedRelatorioDiagnosticIdRouteImport.update({
+    id: '/relatorio/$diagnosticId',
+    path: '/relatorio/$diagnosticId',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute =
+  AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRouteImport.update({
+    id: '/diagnostico/$diagnosticId/dimensao/$position',
+    path: '/diagnostico/$diagnosticId/dimensao/$position',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
   '/forum': typeof ForumRoute
@@ -111,16 +161,23 @@ export interface FileRoutesByFullPath {
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/login': typeof LoginRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
   '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos/': typeof CursosIndexRoute
+  '/relatorio/$diagnosticId': typeof AuthenticatedRelatorioDiagnosticIdRoute
+  '/diagnostico/$diagnosticId/dimensao/$position': typeof AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
   '/forum': typeof ForumRoute
@@ -128,17 +185,25 @@ export interface FileRoutesByTo {
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/login': typeof LoginRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
   '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos': typeof CursosIndexRoute
+  '/relatorio/$diagnosticId': typeof AuthenticatedRelatorioDiagnosticIdRoute
+  '/diagnostico/$diagnosticId/dimensao/$position': typeof AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/cadastro': typeof CadastroRoute
   '/contato': typeof ContatoRoute
   '/eventos': typeof EventosRoute
   '/forum': typeof ForumRoute
@@ -146,18 +211,25 @@ export interface FileRoutesById {
   '/indice-governanca-ia': typeof IndiceGovernancaIaRoute
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
+  '/login': typeof LoginRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
   '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/cursos/governanca-inteligencia-artificial-executivos': typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
   '/cursos/': typeof CursosIndexRoute
+  '/_authenticated/relatorio/$diagnosticId': typeof AuthenticatedRelatorioDiagnosticIdRoute
+  '/_authenticated/diagnostico/$diagnosticId/dimensao/$position': typeof AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/cadastro'
     | '/contato'
     | '/eventos'
     | '/forum'
@@ -165,16 +237,23 @@ export interface FileRouteTypes {
     | '/indice-governanca-ia'
     | '/instituto'
     | '/knowledge-hub'
+    | '/login'
     | '/o-que-fazemos'
     | '/precos'
     | '/publicacoes'
+    | '/recuperar-senha'
     | '/sobre'
     | '/solucoes'
+    | '/admin'
+    | '/dashboard'
     | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos/'
+    | '/relatorio/$diagnosticId'
+    | '/diagnostico/$diagnosticId/dimensao/$position'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/cadastro'
     | '/contato'
     | '/eventos'
     | '/forum'
@@ -182,16 +261,24 @@ export interface FileRouteTypes {
     | '/indice-governanca-ia'
     | '/instituto'
     | '/knowledge-hub'
+    | '/login'
     | '/o-que-fazemos'
     | '/precos'
     | '/publicacoes'
+    | '/recuperar-senha'
     | '/sobre'
     | '/solucoes'
+    | '/admin'
+    | '/dashboard'
     | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos'
+    | '/relatorio/$diagnosticId'
+    | '/diagnostico/$diagnosticId/dimensao/$position'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
+    | '/cadastro'
     | '/contato'
     | '/eventos'
     | '/forum'
@@ -199,17 +286,25 @@ export interface FileRouteTypes {
     | '/indice-governanca-ia'
     | '/instituto'
     | '/knowledge-hub'
+    | '/login'
     | '/o-que-fazemos'
     | '/precos'
     | '/publicacoes'
+    | '/recuperar-senha'
     | '/sobre'
     | '/solucoes'
+    | '/_authenticated/admin'
+    | '/_authenticated/dashboard'
     | '/cursos/governanca-inteligencia-artificial-executivos'
     | '/cursos/'
+    | '/_authenticated/relatorio/$diagnosticId'
+    | '/_authenticated/diagnostico/$diagnosticId/dimensao/$position'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  CadastroRoute: typeof CadastroRoute
   ContatoRoute: typeof ContatoRoute
   EventosRoute: typeof EventosRoute
   ForumRoute: typeof ForumRoute
@@ -217,9 +312,11 @@ export interface RootRouteChildren {
   IndiceGovernancaIaRoute: typeof IndiceGovernancaIaRoute
   InstitutoRoute: typeof InstitutoRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
+  LoginRoute: typeof LoginRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
   PrecosRoute: typeof PrecosRoute
   PublicacoesRoute: typeof PublicacoesRoute
+  RecuperarSenhaRoute: typeof RecuperarSenhaRoute
   SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
   CursosGovernancaInteligenciaArtificialExecutivosRoute: typeof CursosGovernancaInteligenciaArtificialExecutivosRoute
@@ -242,6 +339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/recuperar-senha': {
+      id: '/recuperar-senha'
+      path: '/recuperar-senha'
+      fullPath: '/recuperar-senha'
+      preLoaderRoute: typeof RecuperarSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/publicacoes': {
       id: '/publicacoes'
       path: '/publicacoes'
@@ -261,6 +365,13 @@ declare module '@tanstack/react-router' {
       path: '/o-que-fazemos'
       fullPath: '/o-que-fazemos'
       preLoaderRoute: typeof OQueFazemosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/knowledge-hub': {
@@ -312,6 +423,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -333,11 +458,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosGovernancaInteligenciaArtificialExecutivosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/relatorio/$diagnosticId': {
+      id: '/_authenticated/relatorio/$diagnosticId'
+      path: '/relatorio/$diagnosticId'
+      fullPath: '/relatorio/$diagnosticId'
+      preLoaderRoute: typeof AuthenticatedRelatorioDiagnosticIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/diagnostico/$diagnosticId/dimensao/$position': {
+      id: '/_authenticated/diagnostico/$diagnosticId/dimensao/$position'
+      path: '/diagnostico/$diagnosticId/dimensao/$position'
+      fullPath: '/diagnostico/$diagnosticId/dimensao/$position'
+      preLoaderRoute: typeof AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedRelatorioDiagnosticIdRoute: typeof AuthenticatedRelatorioDiagnosticIdRoute
+  AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute: typeof AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedRelatorioDiagnosticIdRoute:
+    AuthenticatedRelatorioDiagnosticIdRoute,
+  AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute:
+    AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  CadastroRoute: CadastroRoute,
   ContatoRoute: ContatoRoute,
   EventosRoute: EventosRoute,
   ForumRoute: ForumRoute,
@@ -345,9 +519,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndiceGovernancaIaRoute: IndiceGovernancaIaRoute,
   InstitutoRoute: InstitutoRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
+  LoginRoute: LoginRoute,
   OQueFazemosRoute: OQueFazemosRoute,
   PrecosRoute: PrecosRoute,
   PublicacoesRoute: PublicacoesRoute,
+  RecuperarSenhaRoute: RecuperarSenhaRoute,
   SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
   CursosGovernancaInteligenciaArtificialExecutivosRoute:
