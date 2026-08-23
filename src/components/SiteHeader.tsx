@@ -67,6 +67,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link
+            to="/login"
+            className="hidden rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted xl:inline-flex"
+          >
+            Entrar
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
