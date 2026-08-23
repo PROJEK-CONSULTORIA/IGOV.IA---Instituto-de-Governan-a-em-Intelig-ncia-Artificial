@@ -1,5 +1,25 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Compass, Shield, BarChart3, Cog, Bot, Sparkles, BookOpen, Calendar, Gauge } from "lucide-react";
+import {
+  ArrowRight,
+  Compass,
+  Shield,
+  BarChart3,
+  Cog,
+  Bot,
+  Sparkles,
+  BookOpen,
+  Calendar,
+  Gauge,
+  Users,
+  Server,
+  Wallet,
+  Database,
+  UserCheck,
+  Scale,
+  Lock,
+  Network,
+  Activity,
+} from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
@@ -36,22 +56,31 @@ const audiences = [
   { title: "Serviços", text: "Soluções inteligentes para atendimento, gestão e tomada de decisão." },
 ];
 
-const dimensions = [
-  "Estratégia e Governança",
-  "Cultura, Pessoas e Comunicação",
-  "Estrutura Tecnológica",
-  "Investimentos, Custos e Despesas",
-  "Qualidade de Dados",
-  "Impacto no Usuário Final",
-  "Compliance, Riscos e Ética",
-  "Segurança da Informação",
-  "Fornecedores e Integrações",
-  "Monitoramento e Melhoria Contínua",
+const dimensoes = [
+  { icon: Compass, t: "Estratégia e Governança", d: "Alinhamento estratégico e políticas corporativas claras." },
+  { icon: Users, t: "Cultura, Pessoas e Comunicação", d: "Capacitação de times e gestão de mudanças organizacionais." },
+  { icon: Server, t: "Estrutura Tecnológica", d: "Infraestrutura robusta para suportar modelos de IA." },
+  { icon: Wallet, t: "Investimentos, Custos e Despesas", d: "Gestão financeira eficiente de projetos de IA." },
+  { icon: Database, t: "Qualidade de Dados", d: "Governança de dados para garantir inputs confiáveis." },
+  { icon: UserCheck, t: "Impacto no Usuário Final", d: "Experiência do usuário e transparência nas interações." },
+  { icon: Scale, t: "Compliance, Riscos e Ética", d: "Conformidade legal e princípios éticos aplicados." },
+  { icon: Lock, t: "Segurança da Informação", d: "Proteção contra vulnerabilidades e ataques adversariais." },
+  { icon: Network, t: "Fornecedores e Integrações", d: "Gestão de riscos em ecossistemas de terceiros." },
+  { icon: Activity, t: "Monitoramento e Melhoria Contínua", d: "Métricas de performance e reavaliação constante." },
+];
+
+const valores = [
+  { t: "Transparência", d: "Acreditamos que a transparência é a base da confiança e da governança eficaz da Inteligência Artificial." },
+  { t: "Ética", d: "A ética deve orientar todas as decisões no desenvolvimento e na aplicação de sistemas de IA." },
+  { t: "Inclusão", d: "A governança de IA deve considerar e proteger os interesses de todos os segmentos da sociedade." },
+  { t: "Rigor Técnico", d: "Nossas análises e recomendações são fundamentadas em evidências científicas e melhores práticas." },
+  { t: "Independência", d: "Mantemos independência institucional para garantir imparcialidade em avaliações e posicionamentos." },
+  { t: "Responsabilidade", d: "Atuamos com responsabilidade social, ambiental e institucional em todas as nossas iniciativas." },
 ];
 
 const explore = [
-  { icon: Gauge, t: "Framework", d: "As 10 dimensões que estruturam a governança de IA.", to: "/framework" as const },
   { icon: Cog, t: "Soluções", d: "Diagnóstico, consultoria, educação e agentes inteligentes.", to: "/solucoes" as const },
+  { icon: Gauge, t: "Preços", d: "Planos para cada estágio da sua jornada em governança de IA.", to: "/precos" as const },
   { icon: BookOpen, t: "Publicações", d: "Artigos, pesquisas e análises sobre IA responsável.", to: "/knowledge-hub" as const },
   { icon: Calendar, t: "AI Governance Forum", d: "Encontros e debates sobre o futuro da governança.", to: "/forum" as const },
 ];
@@ -135,17 +164,17 @@ function Index() {
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
                   to="/contato"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_16px_40px_-16px_var(--color-primary)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_16px_40px_-16px_var(--color-primary)]"
                 >
                   Solicitar Diagnóstico
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <Link
-                  to="/framework"
+                <a
+                  href="#framework"
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-card"
                 >
                   Conhecer o Framework
-                </Link>
+                </a>
               </div>
             </Reveal>
           </div>
@@ -155,6 +184,113 @@ function Index() {
               <HeroStatsPanel />
             </Parallax>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Instituto */}
+      <section id="instituto" className="border-t border-border/60">
+        <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mb-14 max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Instituto</p>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-5xl">
+                Governança que transforma a IA em valor para a sociedade.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                O IGOV.IA promove a adoção ética, segura, responsável e estratégica da Inteligência
+                Artificial em organizações públicas e privadas.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="max-w-4xl space-y-6 text-lg leading-relaxed text-muted-foreground">
+            <Reveal>
+              <p>
+                O <strong className="text-foreground">IGOV.IA — Instituto de Governança em Inteligência Artificial</strong> tem
+                como propósito promover a adoção ética, segura, responsável e estratégica da Inteligência
+                Artificial nas organizações públicas e privadas, contribuindo para que a tecnologia seja
+                utilizada como instrumento de desenvolvimento humano, inovação, eficiência e geração de
+                valor para a sociedade.
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <p>
+                O Instituto atua como agente de transformação e disseminação de conhecimento, apoiando
+                instituições na construção de modelos de governança capazes de equilibrar inovação,
+                gestão de riscos, conformidade regulatória, transparência, segurança da informação e
+                respeito aos direitos fundamentais.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p>
+                Por meio de pesquisa, educação, desenvolvimento de metodologias, diagnósticos de
+                maturidade, capacitação de lideranças e apoio à implementação de boas práticas, o
+                IGOV.IA busca fortalecer a confiança nas soluções de Inteligência Artificial e contribuir
+                para a formação de organizações mais preparadas para os desafios da economia digital.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-16 grid gap-5 md:grid-cols-2">
+            <Reveal>
+              <div className="rounded-3xl border border-primary/30 bg-primary/5 p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa missão</p>
+                <p className="mt-4 text-lg font-semibold text-foreground">
+                  Promover a governança responsável da Inteligência Artificial por meio de pesquisa,
+                  educação, metodologias e advocacy, contribuindo para que a IA seja desenvolvida e
+                  utilizada de forma ética, transparente e benéfica para toda a sociedade.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={90}>
+              <div className="rounded-3xl border border-border bg-card/60 p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa visão</p>
+                <p className="mt-4 text-lg font-semibold text-foreground">
+                  Ser referência em governança da Inteligência Artificial no Brasil e na América Latina,
+                  reconhecida pela qualidade de seus padrões, relevância no debate regulatório e
+                  excelência de seus programas educacionais.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={120}>
+            <div className="mt-10 rounded-3xl border border-primary/30 bg-primary/5 p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossa razão de existir</p>
+              <p className="mt-4 text-2xl font-semibold text-foreground sm:text-3xl">
+                Construir um futuro em que a Inteligência Artificial seja governada com responsabilidade,
+                utilizada com propósito e aplicada para gerar benefícios sustentáveis para organizações e
+                para a sociedade.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Valores */}
+      <section className="border-t border-border/60 bg-card/30">
+        <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossos valores</p>
+              <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+                Os princípios que orientam todas as nossas ações e decisões.
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid gap-4 md:grid-cols-2">
+            {valores.map((p, i) => (
+              <Reveal key={p.t} delay={i * 60}>
+                <div className="rounded-2xl border border-border bg-background p-6">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-sm font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                    <h3 className="text-lg font-semibold text-foreground">{p.t}</h3>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">{p.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -189,8 +325,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Framework em destaque */}
-      <section className="relative flex min-h-screen items-center overflow-hidden border-t border-border/60 bg-card/20">
+      {/* Framework */}
+      <section id="framework" className="relative flex min-h-screen items-center overflow-hidden border-t border-border/60 bg-card/20">
         <Parallax speed={0.04} className="pointer-events-none absolute inset-0">
           <div
             aria-hidden
@@ -205,30 +341,55 @@ function Index() {
             <div className="mb-14 max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Framework</p>
               <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-5xl">
-                10 dimensões para medir e evoluir a maturidade em IA.
+                As 10 dimensões que sustentam a maturidade institucional em IA.
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Mais de 100 questões e 9 níveis de maturidade que revelam onde sua organização está
-                e o caminho para onde precisa chegar.
+                Nossa metodologia avalia e orienta a adoção da IA a partir de dimensões estratégicas,
+                técnicas, jurídicas e operacionais — mais de 100 questões e 9 níveis de maturidade que
+                revelam onde sua organização está e o caminho para onde precisa chegar.
               </p>
             </div>
           </Reveal>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {dimensions.map((d, i) => (
-              <Reveal key={d} delay={i * 45}>
-                <div className="group flex h-full flex-col gap-3 rounded-xl border border-border bg-background/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
-                  <span className="text-xs font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-sm font-medium text-foreground">{d}</span>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {dimensoes.map(({ icon: Icon, t, d }, i) => (
+              <Reveal key={t} delay={i * 45}>
+                <article className="group flex h-full flex-col rounded-2xl border border-border bg-background/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-card">
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="mt-5 text-base font-semibold text-foreground">{t}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{d}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Como funciona */}
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            {[
+              { n: "01", t: "Avaliação", d: "Mapeamento institucional das 10 dimensões com instrumentos próprios." },
+              { n: "02", t: "Pontuação", d: "Classificação de maturidade por dimensão e visão consolidada." },
+              { n: "03", t: "Plano", d: "Recomendações priorizadas e jornada de evolução personalizada." },
+            ].map((s, i) => (
+              <Reveal key={s.n} delay={i * 80}>
+                <div className="rounded-2xl border border-border bg-background p-6">
+                  <span className="font-mono text-sm text-primary">{s.n}</span>
+                  <h3 className="mt-3 text-lg font-semibold text-foreground">{s.t}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+
           <Reveal delay={120}>
             <Link
-              to="/framework"
-              className="group mt-12 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+              to="/contato"
+              className="group mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Explorar o framework completo
+              Solicitar diagnóstico
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Reveal>
@@ -403,12 +564,12 @@ function Index() {
                   Solicitar Diagnóstico
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <Link
-                  to="/instituto"
+                <a
+                  href="#instituto"
                   className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-card"
                 >
                   Conhecer o Instituto
-                </Link>
+                </a>
               </div>
             </div>
           </Reveal>
