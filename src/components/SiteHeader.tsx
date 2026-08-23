@@ -7,7 +7,6 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/solucoes", label: "Soluções" },
   { to: "/cursos", label: "Cursos" },
-  { to: "/precos", label: "Preços" },
   { to: "/knowledge-hub", label: "Publicações" },
   { to: "/forum", label: "Eventos" },
   { to: "/contato", label: "Contato" },

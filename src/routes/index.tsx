@@ -80,7 +80,6 @@ const valores = [
 
 const explore = [
   { icon: Cog, t: "Soluções", d: "Diagnóstico, consultoria, educação e agentes inteligentes.", to: "/solucoes" as const },
-  { icon: Gauge, t: "Preços", d: "Planos para cada estágio da sua jornada em governança de IA.", to: "/precos" as const },
   { icon: BookOpen, t: "Publicações", d: "Artigos, pesquisas e análises sobre IA responsável.", to: "/knowledge-hub" as const },
   { icon: Calendar, t: "AI Governance Forum", d: "Encontros e debates sobre o futuro da governança.", to: "/forum" as const },
 ];
