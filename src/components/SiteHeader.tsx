@@ -9,6 +9,7 @@ const nav = [
   { to: "/framework", label: "Framework" },
   { to: "/solucoes", label: "Soluções" },
   { to: "/cursos", label: "Cursos" },
+  { to: "/precos", label: "Preços" },
   { to: "/knowledge-hub", label: "Publicações" },
   { to: "/forum", label: "AI Governance Forum" },
   { to: "/contato", label: "Contato" },

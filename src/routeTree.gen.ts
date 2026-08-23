@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as PublicacoesRouteImport } from './routes/publicacoes'
+import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
 import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
 import { Route as InstitutoRouteImport } from './routes/instituto'
@@ -37,6 +38,11 @@ const SobreRoute = SobreRouteImport.update({
 const PublicacoesRoute = PublicacoesRouteImport.update({
   id: '/publicacoes',
   path: '/publicacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrecosRoute = PrecosRouteImport.update({
+  id: '/precos',
+  path: '/precos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OQueFazemosRoute = OQueFazemosRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/instituto': typeof InstitutoRoute
   '/knowledge-hub': typeof KnowledgeHubRoute
   '/o-que-fazemos': typeof OQueFazemosRoute
+  '/precos': typeof PrecosRoute
   '/publicacoes': typeof PublicacoesRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/instituto'
     | '/knowledge-hub'
     | '/o-que-fazemos'
+    | '/precos'
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/instituto'
     | '/knowledge-hub'
     | '/o-que-fazemos'
+    | '/precos'
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/instituto'
     | '/knowledge-hub'
     | '/o-que-fazemos'
+    | '/precos'
     | '/publicacoes'
     | '/sobre'
     | '/solucoes'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   InstitutoRoute: typeof InstitutoRoute
   KnowledgeHubRoute: typeof KnowledgeHubRoute
   OQueFazemosRoute: typeof OQueFazemosRoute
+  PrecosRoute: typeof PrecosRoute
   PublicacoesRoute: typeof PublicacoesRoute
   SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
@@ -234,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/publicacoes'
       fullPath: '/publicacoes'
       preLoaderRoute: typeof PublicacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/precos': {
+      id: '/precos'
+      path: '/precos'
+      fullPath: '/precos'
+      preLoaderRoute: typeof PrecosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-que-fazemos': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   InstitutoRoute: InstitutoRoute,
   KnowledgeHubRoute: KnowledgeHubRoute,
   OQueFazemosRoute: OQueFazemosRoute,
+  PrecosRoute: PrecosRoute,
   PublicacoesRoute: PublicacoesRoute,
   SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
