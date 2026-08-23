@@ -29,9 +29,9 @@ import { Testimonials } from "@/components/Testimonials";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "IGOV.IA — Governando o futuro da Inteligência Artificial" },
+      { title: "IGOV.IA — O futuro da IA começa pela Governança" },
       { name: "description", content: "O IGOV.IA ajuda organizações públicas e privadas a implementar Inteligência Artificial com estratégia, confiança e responsabilidade." },
-      { property: "og:title", content: "IGOV.IA — Governando o futuro da Inteligência Artificial" },
+      { property: "og:title", content: "IGOV.IA — O futuro da IA começa pela Governança" },
       { property: "og:description", content: "Diagnóstico de maturidade, framework de governança e implementação responsável de IA." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -150,7 +150,7 @@ function Index() {
             </Reveal>
             <Reveal delay={90}>
               <h1 className="max-w-3xl text-4xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
-                Governando o futuro da Inteligência Artificial.
+                O futuro da IA começa pela Governança.
               </h1>
             </Reveal>
             <Reveal delay={180}>
