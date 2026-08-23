@@ -90,7 +90,7 @@ function PlanCard({ plano }: { plano: Plano }) {
       </ul>
 
       <div className="mt-auto">
-        <Link to="/contato" className={btn}>
+        <Link to={plano.id === "free" ? "/cadastro" : "/contato"} className={btn}>
           {plano.cta}
         </Link>
       </div>
