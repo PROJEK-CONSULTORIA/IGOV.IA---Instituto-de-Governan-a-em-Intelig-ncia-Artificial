@@ -48,9 +48,10 @@ export const registerFreeUser = createServerFn({ method: "POST" })
     });
 
     if (error) {
+      console.error("[registerFreeUser] createUser failed", error.message);
       const message = /already|registered|exists/i.test(error.message)
         ? "Já existe uma conta cadastrada com este e-mail."
-        : "Não foi possível concluir o cadastro. Tente novamente.";
+        : "Não foi possível concluir o cadastro. Tente novamente em instantes.";
       return { ok: false as const, message };
     }
     return { ok: true as const, userId: created.user?.id ?? null };
