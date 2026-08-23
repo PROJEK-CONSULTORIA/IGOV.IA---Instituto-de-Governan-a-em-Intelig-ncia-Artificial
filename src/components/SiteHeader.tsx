@@ -5,8 +5,6 @@ import logo from "@/assets/igovia-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/instituto", label: "Instituto" },
-  { to: "/framework", label: "Framework" },
   { to: "/solucoes", label: "Soluções" },
   { to: "/cursos", label: "Cursos" },
   { to: "/precos", label: "Preços" },
