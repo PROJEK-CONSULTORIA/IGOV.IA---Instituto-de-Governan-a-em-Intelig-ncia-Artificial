@@ -9,98 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SolucoesRouteImport } from './routes/solucoes'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as RecuperarSenhaRouteImport } from './routes/recuperar-senha'
-import { Route as PublicacoesRouteImport } from './routes/publicacoes'
-import { Route as PrecosRouteImport } from './routes/precos'
-import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
-import { Route as InstitutoRouteImport } from './routes/instituto'
-import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
-import { Route as FrameworkRouteImport } from './routes/framework'
-import { Route as ForumRouteImport } from './routes/forum'
-import { Route as EventosRouteImport } from './routes/eventos'
-import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as CadastroRouteImport } from './routes/cadastro'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as EventosRouteImport } from './routes/eventos'
+import { Route as ForumRouteImport } from './routes/forum'
+import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as IndiceGovernancaIaRouteImport } from './routes/indice-governanca-ia'
+import { Route as InstitutoRouteImport } from './routes/instituto'
+import { Route as KnowledgeHubRouteImport } from './routes/knowledge-hub'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OQueFazemosRouteImport } from './routes/o-que-fazemos'
+import { Route as PrecosRouteImport } from './routes/precos'
+import { Route as PublicacoesRouteImport } from './routes/publicacoes'
+import { Route as RecuperarSenhaRouteImport } from './routes/recuperar-senha'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 import { Route as CursosGovernancaInteligenciaArtificialExecutivosRouteImport } from './routes/cursos.governanca-inteligencia-artificial-executivos'
-import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
-import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedRelatorioDiagnosticIdRouteImport } from './routes/_authenticated/relatorio.$diagnosticId'
 import { Route as AuthenticatedDiagnosticoDiagnosticIdDimensaoPositionRouteImport } from './routes/_authenticated/diagnostico.$diagnosticId.dimensao.$position'
 
-const SolucoesRoute = SolucoesRouteImport.update({
-  id: '/solucoes',
-  path: '/solucoes',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RecuperarSenhaRoute = RecuperarSenhaRouteImport.update({
-  id: '/recuperar-senha',
-  path: '/recuperar-senha',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PublicacoesRoute = PublicacoesRouteImport.update({
-  id: '/publicacoes',
-  path: '/publicacoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrecosRoute = PrecosRouteImport.update({
-  id: '/precos',
-  path: '/precos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OQueFazemosRoute = OQueFazemosRouteImport.update({
-  id: '/o-que-fazemos',
-  path: '/o-que-fazemos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
-  id: '/knowledge-hub',
-  path: '/knowledge-hub',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InstitutoRoute = InstitutoRouteImport.update({
-  id: '/instituto',
-  path: '/instituto',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndiceGovernancaIaRoute = IndiceGovernancaIaRouteImport.update({
-  id: '/indice-governanca-ia',
-  path: '/indice-governanca-ia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FrameworkRoute = FrameworkRouteImport.update({
-  id: '/framework',
-  path: '/framework',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForumRoute = ForumRouteImport.update({
-  id: '/forum',
-  path: '/forum',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EventosRoute = EventosRouteImport.update({
-  id: '/eventos',
-  path: '/eventos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContatoRoute = ContatoRouteImport.update({
-  id: '/contato',
-  path: '/contato',
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CadastroRoute = CadastroRouteImport.update({
@@ -108,14 +47,85 @@ const CadastroRoute = CadastroRouteImport.update({
   path: '/cadastro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const EventosRoute = EventosRouteImport.update({
+  id: '/eventos',
+  path: '/eventos',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ForumRoute = ForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrameworkRoute = FrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndiceGovernancaIaRoute = IndiceGovernancaIaRouteImport.update({
+  id: '/indice-governanca-ia',
+  path: '/indice-governanca-ia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutoRoute = InstitutoRouteImport.update({
+  id: '/instituto',
+  path: '/instituto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeHubRoute = KnowledgeHubRouteImport.update({
+  id: '/knowledge-hub',
+  path: '/knowledge-hub',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OQueFazemosRoute = OQueFazemosRouteImport.update({
+  id: '/o-que-fazemos',
+  path: '/o-que-fazemos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrecosRoute = PrecosRouteImport.update({
+  id: '/precos',
+  path: '/precos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacoesRoute = PublicacoesRouteImport.update({
+  id: '/publicacoes',
+  path: '/publicacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperarSenhaRoute = RecuperarSenhaRouteImport.update({
+  id: '/recuperar-senha',
+  path: '/recuperar-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const CursosIndexRoute = CursosIndexRouteImport.update({
   id: '/cursos/',
@@ -128,16 +138,6 @@ const CursosGovernancaInteligenciaArtificialExecutivosRoute =
     path: '/cursos/governanca-inteligencia-artificial-executivos',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
 const AuthenticatedRelatorioDiagnosticIdRoute =
   AuthenticatedRelatorioDiagnosticIdRouteImport.update({
     id: '/relatorio/$diagnosticId',
@@ -325,109 +325,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/solucoes': {
-      id: '/solucoes'
-      path: '/solucoes'
-      fullPath: '/solucoes'
-      preLoaderRoute: typeof SolucoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/recuperar-senha': {
-      id: '/recuperar-senha'
-      path: '/recuperar-senha'
-      fullPath: '/recuperar-senha'
-      preLoaderRoute: typeof RecuperarSenhaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/publicacoes': {
-      id: '/publicacoes'
-      path: '/publicacoes'
-      fullPath: '/publicacoes'
-      preLoaderRoute: typeof PublicacoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/precos': {
-      id: '/precos'
-      path: '/precos'
-      fullPath: '/precos'
-      preLoaderRoute: typeof PrecosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/o-que-fazemos': {
-      id: '/o-que-fazemos'
-      path: '/o-que-fazemos'
-      fullPath: '/o-que-fazemos'
-      preLoaderRoute: typeof OQueFazemosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/knowledge-hub': {
-      id: '/knowledge-hub'
-      path: '/knowledge-hub'
-      fullPath: '/knowledge-hub'
-      preLoaderRoute: typeof KnowledgeHubRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/instituto': {
-      id: '/instituto'
-      path: '/instituto'
-      fullPath: '/instituto'
-      preLoaderRoute: typeof InstitutoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/indice-governanca-ia': {
-      id: '/indice-governanca-ia'
-      path: '/indice-governanca-ia'
-      fullPath: '/indice-governanca-ia'
-      preLoaderRoute: typeof IndiceGovernancaIaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/framework': {
-      id: '/framework'
-      path: '/framework'
-      fullPath: '/framework'
-      preLoaderRoute: typeof FrameworkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/forum': {
-      id: '/forum'
-      path: '/forum'
-      fullPath: '/forum'
-      preLoaderRoute: typeof ForumRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eventos': {
-      id: '/eventos'
-      path: '/eventos'
-      fullPath: '/eventos'
-      preLoaderRoute: typeof EventosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contato': {
-      id: '/contato'
-      path: '/contato'
-      fullPath: '/contato'
-      preLoaderRoute: typeof ContatoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cadastro': {
-      id: '/cadastro'
-      path: '/cadastro'
-      fullPath: '/cadastro'
-      preLoaderRoute: typeof CadastroRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -437,12 +339,124 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventos': {
+      id: '/eventos'
+      path: '/eventos'
+      fullPath: '/eventos'
+      preLoaderRoute: typeof EventosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forum': {
+      id: '/forum'
+      path: '/forum'
+      fullPath: '/forum'
+      preLoaderRoute: typeof ForumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/framework': {
+      id: '/framework'
+      path: '/framework'
+      fullPath: '/framework'
+      preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/indice-governanca-ia': {
+      id: '/indice-governanca-ia'
+      path: '/indice-governanca-ia'
+      fullPath: '/indice-governanca-ia'
+      preLoaderRoute: typeof IndiceGovernancaIaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/instituto': {
+      id: '/instituto'
+      path: '/instituto'
+      fullPath: '/instituto'
+      preLoaderRoute: typeof InstitutoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge-hub': {
+      id: '/knowledge-hub'
+      path: '/knowledge-hub'
+      fullPath: '/knowledge-hub'
+      preLoaderRoute: typeof KnowledgeHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-que-fazemos': {
+      id: '/o-que-fazemos'
+      path: '/o-que-fazemos'
+      fullPath: '/o-que-fazemos'
+      preLoaderRoute: typeof OQueFazemosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/precos': {
+      id: '/precos'
+      path: '/precos'
+      fullPath: '/precos'
+      preLoaderRoute: typeof PrecosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicacoes': {
+      id: '/publicacoes'
+      path: '/publicacoes'
+      fullPath: '/publicacoes'
+      preLoaderRoute: typeof PublicacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recuperar-senha': {
+      id: '/recuperar-senha'
+      path: '/recuperar-senha'
+      fullPath: '/recuperar-senha'
+      preLoaderRoute: typeof RecuperarSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/cursos/': {
       id: '/cursos/'
@@ -457,20 +471,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/cursos/governanca-inteligencia-artificial-executivos'
       preLoaderRoute: typeof CursosGovernancaInteligenciaArtificialExecutivosRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/_authenticated/dashboard': {
-      id: '/_authenticated/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/admin': {
-      id: '/_authenticated/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AuthenticatedAdminRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/relatorio/$diagnosticId': {
       id: '/_authenticated/relatorio/$diagnosticId'
