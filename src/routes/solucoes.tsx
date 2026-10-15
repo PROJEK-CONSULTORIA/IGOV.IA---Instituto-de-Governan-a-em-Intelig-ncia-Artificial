@@ -75,7 +75,7 @@ function ServicosPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
                   <BadgeCheck className="h-6 w-6" />
                 </div>
-                <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nova solução</p>
+                <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Sistemas de Gestão de Inteligência Artificial (SGIA)</p>
                 <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
                   Preparação para Certificação ISO/IEC 42001
                 </h2>
